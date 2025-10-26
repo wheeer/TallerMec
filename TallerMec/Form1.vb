@@ -1,7 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form1
+    '  Cadena de conexión a la base de datos
     Private connectionString As String = "Server=localhost;Database=taller;User ID='root';Password='';"
+
+    ' Evento Load del formulario
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Configuración del formulario
         Me.Text = "Mechanico Login"
@@ -9,12 +12,22 @@ Public Class Form1
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
     End Sub
+
+    ' metodo para limpiar el formulario
     Private Sub LimpiarFormulario()
         tbCorreo.Clear()
         tbPwd.Clear()
         tbCorreo.Focus()
     End Sub
 
+    ' metodo para abrir el formulario de administrador
+    Private Sub AbrirAdminForm(correo As String, rol As String)
+        Dim adminForm As New AdminForm(correo, rol)
+        adminForm.Show()
+        Me.Hide()
+    End Sub
+
+    ' Evento Click del botón de inicio de sesión
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
         Dim usuario = tbCorreo.Text
         Dim passw = tbPwd.Text
@@ -24,9 +37,12 @@ Public Class Form1
                 conn.Open()
                 '   Consulta para obtener los datos del usuario
                 Dim sqlUsuario = "SELECT Contraseña, Correo, Tipo FROM usuarios WHERE Correo=@correo"
+                '   Ejecutar la consulta
                 Using cmd As New MySqlCommand(sqlUsuario, conn)
                     cmd.Parameters.AddWithValue("@correo", usuario)
+                    '   Leer los resultados
                     Using reader = cmd.ExecuteReader
+                        '  Verificar si se encontró el usuario
                         If Not reader.HasRows Then
                             MessageBox.Show("Correo no registrado.")
                             Return
@@ -44,34 +60,15 @@ Public Class Form1
 
                         ' Abrir formulario según rol
                         Select Case rol
-                            Case "Administrador"
-                                Dim adminForm As New AdminForm(correoBD, rol)
-                                adminForm.Show()
-                            Case "Gerente"
-                                Dim adminForm As New AdminForm(correoBD, rol)
-                                adminForm.Show()
-                            Case "Aseguradora"
-                                Dim adminForm As New AdminForm(correoBD, rol)
-                                adminForm.Show()
-                            Case "Vendedor"
-                                Dim adminForm As New AdminForm(correoBD, rol)
-                                adminForm.Show()
-                            Case "Mecanico"
-                                Dim adminForm As New AdminForm(correoBD, rol)
-                                adminForm.Show()
-                            Case "Analista"
-                                Dim adminForm As New AdminForm(correoBD, rol)
-                                adminForm.Show()
+                            Case "Administrador", "Gerente", "Aseguradora", "Vendedor", "Mecanico", "Analista"
+                                AbrirAdminForm(correoBD, rol)
                             Case Else
                                 MessageBox.Show("Rol no reconocido: " & rol)
                                 Return
                         End Select
-
                         LimpiarFormulario()
-                        Hide() ' Ocultar el formulario de inicio de sesión
                     End Using
                 End Using
-
             Catch ex As Exception
                 MessageBox.Show("Error de conexión: " & ex.Message)
             End Try
