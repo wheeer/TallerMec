@@ -1,15 +1,17 @@
 ﻿Public Class UsuariosForm
-    '   Variables para almacenar correo y rol
     Private correoUsuario As String
     Private rolUsuario As String
-    ' Constructor que recibe correo y rol
-    Public Sub New(correo As String, rol As String)
+
+    ' Constructor usando el módulo UsuarioActual.
+    Public Sub New()
         InitializeComponent()
-        correoUsuario = correo
-        rolUsuario = rol
+        correoUsuario = UsuarioActual.Correo
+        rolUsuario = UsuarioActual.Rol
     End Sub
+
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Dim adminMenu As New AdminForm(correoUsuario, rolUsuario)
+        ' Abrir AdminForm.
+        Dim adminMenu As New AdminForm()
         adminMenu.Show()
         Me.Close()
     End Sub

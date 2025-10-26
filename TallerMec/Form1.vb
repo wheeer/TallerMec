@@ -1,71 +1,59 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form1
-    '  Cadena de conexión a la base de datos
-    Private connectionString As String = "Server=localhost;Database=taller;User ID='root';Password='';"
-
-    ' Evento Load del formulario
+    ' Evento Load del formulario inicial.
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Configuración del formulario
         Me.Text = "Mechanico Login"
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
     End Sub
 
-    ' metodo para limpiar el formulario
+    ' Limpiar los campos del formulario de inicio de sesión.
     Private Sub LimpiarFormulario()
         tbCorreo.Clear()
         tbPwd.Clear()
         tbCorreo.Focus()
     End Sub
 
-    ' metodo para abrir el formulario de administrador
-    Private Sub AbrirAdminForm(correo As String, rol As String)
-        Dim adminForm As New AdminForm(correo, rol)
-        adminForm.Show()
-        Me.Hide()
-    End Sub
-
-    ' Evento Click del botón de inicio de sesión
+    ' Click del botón de inicio de sesión.
     Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
+        ' Obtener datos de usuario y contraseña de los TextBox.
         Dim usuario = tbCorreo.Text
         Dim passw = tbPwd.Text
-
-        Using conn As New MySqlConnection(connectionString)
+        ' conexión a la base de datos usando módulo de conexión.
+        Using conn = ConexionBD.ObtenerConexion()
             Try
-                conn.Open()
-                '   Consulta para obtener los datos del usuario
+                ' Consulta SQL para obtener datos del usuario.
                 Dim sqlUsuario = "SELECT Contraseña, Correo, Tipo FROM usuarios WHERE Correo=@correo"
-                '   Ejecutar la consulta
+                ' Ejecutar consulta
                 Using cmd As New MySqlCommand(sqlUsuario, conn)
                     cmd.Parameters.AddWithValue("@correo", usuario)
-                    '   Leer los resultados
-                    Using reader = cmd.ExecuteReader
-                        '  Verificar si se encontró el usuario
+                    ' Leer resultados
+                    Using reader = cmd.ExecuteReader()
+                        ' manejar caso de usuario no encontrado en la base de datos.
                         If Not reader.HasRows Then
                             MessageBox.Show("Correo no registrado.")
                             Return
                         End If
-                        '   Leer los datos del usuario
+                        ' Leer datos del usuario.
                         reader.Read()
                         Dim contraseñaBD = reader("Contraseña").ToString
                         Dim correoBD = reader("Correo").ToString
-                        Dim rol = reader("Tipo").ToString
-                        '   Verificar la contraseña
+                        Dim rolBD = reader("Tipo").ToString
+                        ' Verificar contraseña ingresada.
                         If passw <> contraseñaBD Then
                             MessageBox.Show("Contraseña incorrecta.")
                             Return
                         End If
 
-                        ' Abrir formulario según rol
-                        Select Case rol
-                            Case "Administrador", "Gerente", "Aseguradora", "Vendedor", "Mecanico", "Analista"
-                                AbrirAdminForm(correoBD, rol)
-                            Case Else
-                                MessageBox.Show("Rol no reconocido: " & rol)
-                                Return
-                        End Select
+                        ' Guardar usuario actual en el módulo UsuarioActual para uso posterior.
+                        UsuarioActual.SetUsuario(correoBD, rolBD)
+
+                        ' Abrir AdminForm directamente después de inicio de sesión exitoso.
+                        Dim adminForm As New AdminForm()
+                        adminForm.Show() ' Mostrar el formulario de administrador
+                        Me.Hide() ' Ocultar el formulario de inicio de sesión
                         LimpiarFormulario()
                     End Using
                 End Using
