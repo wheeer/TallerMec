@@ -47,6 +47,21 @@ Public Class Form1
                             Case "Administrador"
                                 Dim adminForm As New AdminForm(correoBD, rol)
                                 adminForm.Show()
+                            Case "Gerente"
+                                Dim adminForm As New AdminForm(correoBD, rol)
+                                adminForm.Show()
+                            Case "Aseguradora"
+                                Dim adminForm As New AdminForm(correoBD, rol)
+                                adminForm.Show()
+                            Case "Vendedor"
+                                Dim adminForm As New AdminForm(correoBD, rol)
+                                adminForm.Show()
+                            Case "Mecanico"
+                                Dim adminForm As New AdminForm(correoBD, rol)
+                                adminForm.Show()
+                            Case "Analista"
+                                Dim adminForm As New AdminForm(correoBD, rol)
+                                adminForm.Show()
                             Case Else
                                 MessageBox.Show("Rol no reconocido: " & rol)
                                 Return
