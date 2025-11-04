@@ -22,6 +22,7 @@ Partial Class RepuestosForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RepuestosForm))
         btnVolver = New Button()
         Label1 = New Label()
         cmbRepuestos = New ComboBox()
@@ -31,24 +32,33 @@ Partial Class RepuestosForm
         btIngresar = New Button()
         btEliminar = New Button()
         Label3 = New Label()
-        txtIngresar = New TextBox()
-        lbVer = New Label()
+        txtNombre = New TextBox()
+        PictureBox1 = New PictureBox()
+        Label4 = New Label()
+        Label5 = New Label()
+        Label6 = New Label()
+        Label7 = New Label()
+        txtStock = New TextBox()
+        txtPrecio = New TextBox()
+        txtProveedor = New TextBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btnVolver
         ' 
-        btnVolver.Location = New Point(939, 692)
+        btnVolver.BackColor = Color.DarkOrange
+        btnVolver.Location = New Point(943, 698)
         btnVolver.Margin = New Padding(4, 5, 4, 5)
         btnVolver.Name = "btnVolver"
         btnVolver.Size = New Size(187, 38)
         btnVolver.TabIndex = 2
         btnVolver.Text = "Volver al Menú"
-        btnVolver.UseVisualStyleBackColor = True
+        btnVolver.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(504, 28)
+        Label1.Location = New Point(504, 23)
         Label1.Name = "Label1"
         Label1.Size = New Size(94, 25)
         Label1.TabIndex = 3
@@ -57,7 +67,7 @@ Partial Class RepuestosForm
         ' cmbRepuestos
         ' 
         cmbRepuestos.FormattingEnabled = True
-        cmbRepuestos.Location = New Point(209, 173)
+        cmbRepuestos.Location = New Point(122, 217)
         cmbRepuestos.Name = "cmbRepuestos"
         cmbRepuestos.Size = New Size(182, 33)
         cmbRepuestos.TabIndex = 4
@@ -65,7 +75,7 @@ Partial Class RepuestosForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(12, 176)
+        Label2.Location = New Point(122, 148)
         Label2.Name = "Label2"
         Label2.Size = New Size(191, 25)
         Label2.TabIndex = 5
@@ -73,72 +83,142 @@ Partial Class RepuestosForm
         ' 
         ' btVer
         ' 
-        btVer.Location = New Point(426, 173)
+        btVer.BackColor = Color.LawnGreen
+        btVer.Location = New Point(107, 289)
         btVer.Name = "btVer"
         btVer.Size = New Size(112, 34)
         btVer.TabIndex = 6
         btVer.Text = "Ver"
-        btVer.UseVisualStyleBackColor = True
+        btVer.UseVisualStyleBackColor = False
         ' 
         ' btEditar
         ' 
-        btEditar.Location = New Point(562, 173)
+        btEditar.BackColor = Color.OrangeRed
+        btEditar.ForeColor = Color.White
+        btEditar.Location = New Point(994, 505)
         btEditar.Name = "btEditar"
         btEditar.Size = New Size(112, 34)
         btEditar.TabIndex = 7
         btEditar.Text = "Editar"
-        btEditar.UseVisualStyleBackColor = True
+        btEditar.UseVisualStyleBackColor = False
         ' 
         ' btIngresar
         ' 
-        btIngresar.Location = New Point(486, 407)
+        btIngresar.BackColor = Color.LawnGreen
+        btIngresar.Location = New Point(809, 505)
         btIngresar.Name = "btIngresar"
         btIngresar.Size = New Size(112, 34)
         btIngresar.TabIndex = 8
         btIngresar.Text = "Ingresar"
-        btIngresar.UseVisualStyleBackColor = True
+        btIngresar.UseVisualStyleBackColor = False
         ' 
         ' btEliminar
         ' 
-        btEliminar.Location = New Point(699, 173)
+        btEliminar.BackColor = Color.Red
+        btEliminar.ForeColor = SystemColors.ButtonHighlight
+        btEliminar.Location = New Point(257, 289)
         btEliminar.Name = "btEliminar"
         btEliminar.Size = New Size(112, 34)
         btEliminar.TabIndex = 9
         btEliminar.Text = "Eliminar"
-        btEliminar.UseVisualStyleBackColor = True
+        btEliminar.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(44, 412)
+        Label3.Location = New Point(835, 148)
         Label3.Name = "Label3"
-        Label3.Size = New Size(228, 25)
+        Label3.Size = New Size(234, 25)
         Label3.TabIndex = 10
-        Label3.Text = "Ingrese un nuevo repuesto:"
+        Label3.Text = "Ingrese o edite un repuesto:"
         ' 
-        ' txtIngresar
+        ' txtNombre
         ' 
-        txtIngresar.Location = New Point(291, 412)
-        txtIngresar.Name = "txtIngresar"
-        txtIngresar.Size = New Size(150, 31)
-        txtIngresar.TabIndex = 11
+        txtNombre.Location = New Point(956, 222)
+        txtNombre.Name = "txtNombre"
+        txtNombre.Size = New Size(150, 31)
+        txtNombre.TabIndex = 11
         ' 
-        ' lbVer
+        ' PictureBox1
         ' 
-        lbVer.AutoSize = True
-        lbVer.Location = New Point(65, 268)
-        lbVer.Name = "lbVer"
-        lbVer.Size = New Size(63, 25)
-        lbVer.TabIndex = 12
-        lbVer.Text = "Label4"
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(-2, -8)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(1161, 761)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 13
+        PictureBox1.TabStop = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(722, 328)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(212, 25)
+        Label4.TabIndex = 14
+        Label4.Text = "Ingrese el Precio Unitario:"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(693, 280)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(241, 25)
+        Label5.TabIndex = 15
+        Label5.Text = "Ingrese la Cantidad de Stock:"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(670, 225)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(264, 25)
+        Label6.TabIndex = 16
+        Label6.Text = "Ingrese el nombre del repuesto:"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(755, 381)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(179, 25)
+        Label7.TabIndex = 17
+        Label7.Text = "Ingrese el Proveedor:"
+        ' 
+        ' txtStock
+        ' 
+        txtStock.Location = New Point(956, 277)
+        txtStock.Name = "txtStock"
+        txtStock.Size = New Size(150, 31)
+        txtStock.TabIndex = 18
+        ' 
+        ' txtPrecio
+        ' 
+        txtPrecio.Location = New Point(956, 325)
+        txtPrecio.Name = "txtPrecio"
+        txtPrecio.Size = New Size(150, 31)
+        txtPrecio.TabIndex = 19
+        ' 
+        ' txtProveedor
+        ' 
+        txtProveedor.Location = New Point(956, 381)
+        txtProveedor.Name = "txtProveedor"
+        txtProveedor.Size = New Size(150, 31)
+        txtProveedor.TabIndex = 20
         ' 
         ' RepuestosForm
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1143, 750)
-        Controls.Add(lbVer)
-        Controls.Add(txtIngresar)
+        Controls.Add(txtProveedor)
+        Controls.Add(txtPrecio)
+        Controls.Add(txtStock)
+        Controls.Add(Label7)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(Label4)
+        Controls.Add(txtNombre)
         Controls.Add(Label3)
         Controls.Add(btEliminar)
         Controls.Add(btIngresar)
@@ -148,9 +228,11 @@ Partial Class RepuestosForm
         Controls.Add(cmbRepuestos)
         Controls.Add(Label1)
         Controls.Add(btnVolver)
+        Controls.Add(PictureBox1)
         Margin = New Padding(4, 5, 4, 5)
         Name = "RepuestosForm"
-        Text = "RepuestosForm"
+        Text = "Repuestos"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -164,6 +246,13 @@ Partial Class RepuestosForm
     Friend WithEvents btIngresar As Button
     Friend WithEvents btEliminar As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtIngresar As TextBox
-    Friend WithEvents lbVer As Label
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtStock As TextBox
+    Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents txtProveedor As TextBox
 End Class
