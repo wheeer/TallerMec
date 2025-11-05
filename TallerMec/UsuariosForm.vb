@@ -2,7 +2,7 @@
     Private correoUsuario As String
     Private rolUsuario As String
 
-    ' Constructor usando el módulo UsuarioActual.
+    ' Constructor usando el módulo UsuarioActual.asdasdad
     Public Sub New()
         InitializeComponent()
         correoUsuario = UsuarioActual.Correo
