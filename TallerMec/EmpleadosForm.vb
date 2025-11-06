@@ -1,12 +1,6 @@
 ﻿Public Class EmpleadosForm
-    Private correoUsuario As String
-    Private rolUsuario As String
-
-    ' Constructor usando el módulo UsuarioActual.
     Public Sub New()
         InitializeComponent()
-        correoUsuario = UsuarioActual.Correo
-        rolUsuario = UsuarioActual.Rol
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click

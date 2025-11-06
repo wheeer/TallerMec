@@ -1,6 +1,5 @@
 ﻿Public Class AdminForm
 
-    ' metodo constructor usando el modulo UsuarioActual
     Public Sub New()
         InitializeComponent()
         ' Mostrar correo y rol del usuario actual en etiquetas desde el módulo UsuarioActual.

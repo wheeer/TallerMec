@@ -1,5 +1,4 @@
 ﻿Public Class UsuariosForm
-    ' Constructor usando el módulo UsuarioActual.asdasdad
     Public Sub New()
         InitializeComponent()
     End Sub

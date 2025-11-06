@@ -1,8 +1,4 @@
 ﻿Public Class ServiciosForm
-    Private correoUsuario As String
-    Private rolUsuario As String
-
-    ' Constructor usando el módulo UsuarioActual.
     Public Sub New()
         InitializeComponent()
     End Sub
