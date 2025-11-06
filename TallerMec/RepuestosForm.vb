@@ -2,15 +2,11 @@
 
 Public Class RepuestosForm
     ' Variables privadas del formulario
-    Private correoUsuario As String
-    Private rolUsuario As String
     Private repuestoSeleccionadoID As Integer = -1 ' Guarda el ID del repuesto seleccionado
 
     ' Constructor
     Public Sub New()
         InitializeComponent()
-        correoUsuario = UsuarioActual.Correo
-        rolUsuario = UsuarioActual.Rol
     End Sub
 
     ' Cargar datos al iniciar el formulario
