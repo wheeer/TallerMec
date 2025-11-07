@@ -7,6 +7,14 @@ Public Class RepuestosForm
     ' Constructor
     Public Sub New()
         InitializeComponent()
+        ' Nombre de la ventana
+        Me.Text = "Gestión de Repuestos"
+        ' centrar la ventana al abrirse
+        Me.StartPosition = FormStartPosition.CenterScreen
+        ' desactivar maximizar
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        ' desactivar maximizar botón
+        Me.MaximizeBox = False
     End Sub
 
     ' Cargar datos al iniciar el formulario

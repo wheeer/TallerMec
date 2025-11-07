@@ -3,9 +3,13 @@
 Public Class Form1
     ' Evento Load del formulario inicial.
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' nombre de la ventana
         Me.Text = "Mechanico Login"
+        ' centrar la ventana al abrirse
         Me.StartPosition = FormStartPosition.CenterScreen
+        ' desactivar maximizar
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        ' desactivar maximizar botón
         Me.MaximizeBox = False
     End Sub
 

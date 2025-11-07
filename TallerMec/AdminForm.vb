@@ -2,6 +2,14 @@
 
     Public Sub New()
         InitializeComponent()
+        ' Nombre de la ventana
+        Me.Text = "Administración"
+        ' centrar la ventana al abrirse
+        Me.StartPosition = FormStartPosition.CenterScreen
+        ' desactivar maximizar
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        ' desactivar maximizar botón
+        Me.MaximizeBox = False
         ' Mostrar correo y rol del usuario actual en etiquetas desde el módulo UsuarioActual.
         lbCorreo.Text = UsuarioActual.Correo
         lbRol.Text = UsuarioActual.Rol

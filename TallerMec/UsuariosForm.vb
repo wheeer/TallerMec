@@ -4,6 +4,14 @@ Public Class UsuariosForm
 
     Public Sub New()
         InitializeComponent()
+        ' Nombre de la ventana
+        Me.Text = "Gestión de Usuarios"
+        ' centrar la ventana al abrirse
+        Me.StartPosition = FormStartPosition.CenterScreen
+        ' desactivar maximizar
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        ' desactivar maximizar botón
+        Me.MaximizeBox = False
     End Sub
 
     ' Buscar usuario por RUT
