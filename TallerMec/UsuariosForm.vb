@@ -36,8 +36,8 @@ Public Class UsuariosForm
     End Sub
 
     ' Crear usuario nuevo
-    Private Sub tbCrear_Click(sender As Object, e As EventArgs) Handles tbCrear.Click
-        If String.IsNullOrWhiteSpace(tbrut.Text) OrElse
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+        If String.IsNullOrWhiteSpace(tbRut.Text) OrElse
            String.IsNullOrWhiteSpace(tbCorreo.Text) OrElse
            String.IsNullOrWhiteSpace(tbUsuario.Text) Then
             MessageBox.Show("Por favor, complete todos los campos.", "Atención")
@@ -46,10 +46,9 @@ Public Class UsuariosForm
 
         Try
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
-                Dim query As String = "INSERT INTO usuarios (Rut, Nombre, Correo, Tipo) VALUES (@rut, @nombre, @correo, @tipo);"
+                Dim query As String = "INSERT INTO usuarios (Rut, Correo, Tipo) VALUES (@rut, @correo, @tipo);"
                 Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@rut", tbrut.Text)
-                    cmd.Parameters.AddWithValue("@nombre", tbNombre.Text)
+                    cmd.Parameters.AddWithValue("@rut", tbRut.Text)
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text)
                     cmd.Parameters.AddWithValue("@tipo", tbUsuario.Text)
                     cmd.ExecuteNonQuery()
@@ -68,19 +67,19 @@ Public Class UsuariosForm
     End Sub
 
     ' Actualizar usuario existente
-    Private Sub tbActualizar_Click(sender As Object, e As EventArgs) Handles tbActualizar.Click
-        If String.IsNullOrWhiteSpace(tbrut.Text) Then
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        If String.IsNullOrWhiteSpace(tbRut.Text) Then
             MessageBox.Show("Debe ingresar un RUT para actualizar.", "Atención")
             Return
         End If
 
         Try
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
-                Dim query As String = "UPDATE usuarios SET Nombre=@nombre, Correo=@correo, Tipo=@tipo WHERE Rut=@rut;"
+                Dim query As String = "UPDATE usuarios SET Correo=@correo, Tipo=@tipo WHERE Rut=@rut;"
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text)
                     cmd.Parameters.AddWithValue("@tipo", tbUsuario.Text)
-                    cmd.Parameters.AddWithValue("@rut", tbrut.Text)
+                    cmd.Parameters.AddWithValue("@rut", tbRut.Text)
 
                     Dim filas As Integer = cmd.ExecuteNonQuery()
                     If filas > 0 Then
@@ -97,13 +96,13 @@ Public Class UsuariosForm
     End Sub
 
     ' Eliminar usuario
-    Private Sub tbEliminar_Click(sender As Object, e As EventArgs) Handles tbEliminar.Click
-        If String.IsNullOrWhiteSpace(tbrut.Text) Then
+    Private Sub btnEiminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If String.IsNullOrWhiteSpace(tbRut.Text) Then
             MessageBox.Show("Ingrese el RUT del usuario que desea eliminar.", "Atención")
             Return
         End If
 
-        Dim confirm As DialogResult = MessageBox.Show($"¿Está seguro que desea eliminar al usuario con RUT {tbrut.Text}?",
+        Dim confirm As DialogResult = MessageBox.Show($"¿Está seguro que desea eliminar al usuario con RUT {tbRut.Text}?",
                                                       "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If confirm = DialogResult.No Then Return
 
@@ -111,7 +110,7 @@ Public Class UsuariosForm
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
                 Dim query As String = "DELETE FROM usuarios WHERE Rut=@rut;"
                 Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@rut", tbrut.Text)
+                    cmd.Parameters.AddWithValue("@rut", tbRut.Text)
                     Dim filas As Integer = cmd.ExecuteNonQuery()
                     If filas > 0 Then
                         MessageBox.Show("Usuario eliminado correctamente.")
