@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-' aaaaaa
+
 Public Class Form1
     ' Evento Load del formulario inicial.
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
