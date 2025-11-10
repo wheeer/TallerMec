@@ -144,7 +144,11 @@ Public Class UsuariosForm
     Private Sub LimpiarCampos()
         tbrut.Clear()
         tbCorreo.Clear()
-        tbUsuario.Clear()
+
     End Sub
 
+    Private Sub UsuariosForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+    End Sub
 End Class

@@ -25,13 +25,15 @@ Partial Class UsuariosForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UsuariosForm))
         btnVolver = New Button()
         GroupBox1 = New GroupBox()
+        TextBox1 = New TextBox()
+        Label5 = New Label()
+        cbRol = New ComboBox()
         Label2 = New Label()
         Label1 = New Label()
         btnActualizar = New Button()
         btnEliminar = New Button()
         btnCrear = New Button()
         tbCorreo = New TextBox()
-        tbUsuario = New TextBox()
         tbRut = New TextBox()
         btnBuscar = New Button()
         Label4 = New Label()
@@ -53,30 +55,58 @@ Partial Class UsuariosForm
         ' GroupBox1
         ' 
         GroupBox1.BackColor = SystemColors.Highlight
+        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(Label5)
+        GroupBox1.Controls.Add(cbRol)
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Controls.Add(btnActualizar)
         GroupBox1.Controls.Add(btnEliminar)
         GroupBox1.Controls.Add(btnCrear)
         GroupBox1.Controls.Add(tbCorreo)
-        GroupBox1.Controls.Add(tbUsuario)
         GroupBox1.Controls.Add(tbRut)
         GroupBox1.Controls.Add(btnBuscar)
         GroupBox1.Controls.Add(Label4)
         GroupBox1.Controls.Add(Label3)
-        GroupBox1.Location = New Point(161, 76)
+        GroupBox1.Location = New Point(161, 49)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(512, 257)
+        GroupBox1.Size = New Size(512, 284)
         GroupBox1.TabIndex = 1
         GroupBox1.TabStop = False
         GroupBox1.Text = "Usuarios"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(160, 81)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(189, 23)
+        TextBox1.TabIndex = 17
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = SystemColors.ControlLightLight
+        Label5.Location = New Point(50, 82)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(74, 15)
+        Label5.TabIndex = 16
+        Label5.Text = "Contraseña:"
+        ' 
+        ' cbRol
+        ' 
+        cbRol.FormattingEnabled = True
+        cbRol.Location = New Point(161, 179)
+        cbRol.Name = "cbRol"
+        cbRol.Size = New Size(188, 23)
+        cbRol.TabIndex = 15
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.White
-        Label2.Location = New Point(30, 33)
+        Label2.Location = New Point(68, 36)
         Label2.Name = "Label2"
         Label2.Size = New Size(30, 15)
         Label2.TabIndex = 14
@@ -95,7 +125,7 @@ Partial Class UsuariosForm
         ' 
         ' btnActualizar
         ' 
-        btnActualizar.Location = New Point(211, 177)
+        btnActualizar.Location = New Point(214, 240)
         btnActualizar.Name = "btnActualizar"
         btnActualizar.Size = New Size(75, 23)
         btnActualizar.TabIndex = 13
@@ -104,7 +134,7 @@ Partial Class UsuariosForm
         ' 
         ' btnEliminar
         ' 
-        btnEliminar.Location = New Point(379, 177)
+        btnEliminar.Location = New Point(379, 240)
         btnEliminar.Name = "btnEliminar"
         btnEliminar.Size = New Size(75, 23)
         btnEliminar.TabIndex = 12
@@ -113,7 +143,7 @@ Partial Class UsuariosForm
         ' 
         ' btnCrear
         ' 
-        btnCrear.Location = New Point(48, 177)
+        btnCrear.Location = New Point(41, 240)
         btnCrear.Name = "btnCrear"
         btnCrear.Size = New Size(75, 23)
         btnCrear.TabIndex = 10
@@ -122,17 +152,10 @@ Partial Class UsuariosForm
         ' 
         ' tbCorreo
         ' 
-        tbCorreo.Location = New Point(160, 72)
+        tbCorreo.Location = New Point(160, 129)
         tbCorreo.Name = "tbCorreo"
         tbCorreo.Size = New Size(189, 23)
         tbCorreo.TabIndex = 9
-        ' 
-        ' tbUsuario
-        ' 
-        tbUsuario.Location = New Point(160, 112)
-        tbUsuario.Name = "tbUsuario"
-        tbUsuario.Size = New Size(189, 23)
-        tbUsuario.TabIndex = 8
         ' 
         ' tbRut
         ' 
@@ -155,18 +178,18 @@ Partial Class UsuariosForm
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.White
-        Label4.Location = New Point(30, 115)
+        Label4.Location = New Point(50, 179)
         Label4.Name = "Label4"
-        Label4.Size = New Size(98, 15)
+        Label4.Size = New Size(29, 15)
         Label4.TabIndex = 5
-        Label4.Text = "Tipo de Usuario:"
+        Label4.Text = "Rol:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.White
-        Label3.Location = New Point(30, 75)
+        Label3.Location = New Point(50, 129)
         Label3.Name = "Label3"
         Label3.Size = New Size(48, 15)
         Label3.TabIndex = 4
@@ -208,9 +231,11 @@ Partial Class UsuariosForm
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents tbCorreo As TextBox
-    Friend WithEvents tbUsuario As TextBox
     Friend WithEvents tbRut As TextBox
     Friend WithEvents btnActualizar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cbRol As ComboBox
 End Class
