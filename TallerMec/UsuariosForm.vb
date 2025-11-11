@@ -23,7 +23,7 @@ Public Class UsuariosForm
 
 
     Public Sub New()
-        InitializeComponent()
+
         CargarRoles()
         ' Nombre de la ventana
         Me.Text = "Gestión de Usuarios"
@@ -51,6 +51,7 @@ Public Class UsuariosForm
                         If reader.Read() Then
                             tbRut.Text = reader("Rut").ToString()
                             tbCorreo.Text = reader("Correo").ToString()
+                            tbContrasena.Text = reader("Contraseña")
                             cbRol.SelectedItem = reader("Tipo").ToString()
                             MessageBox.Show("Usuario encontrado correctamente.")
                         Else

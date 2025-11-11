@@ -25,7 +25,7 @@ Partial Class UsuariosForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UsuariosForm))
         btnVolver = New Button()
         GroupBox1 = New GroupBox()
-        TextBox1 = New TextBox()
+        tbContrasena = New TextBox()
         Label5 = New Label()
         cbRol = New ComboBox()
         Label2 = New Label()
@@ -55,7 +55,7 @@ Partial Class UsuariosForm
         ' GroupBox1
         ' 
         GroupBox1.BackColor = SystemColors.Highlight
-        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(tbContrasena)
         GroupBox1.Controls.Add(Label5)
         GroupBox1.Controls.Add(cbRol)
         GroupBox1.Controls.Add(Label2)
@@ -75,12 +75,12 @@ Partial Class UsuariosForm
         GroupBox1.TabStop = False
         GroupBox1.Text = "Usuarios"
         ' 
-        ' TextBox1
+        ' tbContrasena
         ' 
-        TextBox1.Location = New Point(160, 81)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(189, 23)
-        TextBox1.TabIndex = 17
+        tbContrasena.Location = New Point(160, 81)
+        tbContrasena.Name = "tbContrasena"
+        tbContrasena.Size = New Size(189, 23)
+        tbContrasena.TabIndex = 17
         ' 
         ' Label5
         ' 
@@ -235,7 +235,7 @@ Partial Class UsuariosForm
     Friend WithEvents btnActualizar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbContrasena As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents cbRol As ComboBox
 End Class
