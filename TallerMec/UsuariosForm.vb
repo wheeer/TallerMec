@@ -2,21 +2,41 @@ Imports MySql.Data.MySqlClient
 
 Public Class UsuariosForm
 
+    ' Cargar los roles en el ComboBox al iniciar el formulario
+    Private Sub CargarRoles()
+        Try
+            Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
+                Dim query As String = "SELECT DISTINCT Tipo FROM usuarios WHERE Tipo IS NOT NULL;"
+                Using cmd As New MySqlCommand(query, conn)
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        cbRol.Items.Clear()
+                        While reader.Read()
+                            cbRol.Items.Add(reader("Tipo").ToString())
+                        End While
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los roles: " & ex.Message)
+        End Try
+    End Sub
+
     Public Sub New()
         InitializeComponent()
+        CargarRoles()
         ' Nombre de la ventana
         Me.Text = "Gestión de Usuarios"
-        ' centrar la ventana al abrirse
+        ' Centrar la ventana al abrirse
         Me.StartPosition = FormStartPosition.CenterScreen
-        ' desactivar maximizar
+        ' Desactivar maximizar
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
-        ' desactivar maximizar botón
+        ' Desactivar botón maximizar
         Me.MaximizeBox = False
     End Sub
 
     ' Buscar usuario por RUT
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If String.IsNullOrWhiteSpace(tbrut.Text) Then
+        If String.IsNullOrWhiteSpace(tbRut.Text) Then
             MessageBox.Show("Ingrese el RUT del usuario para buscar.", "Atención")
             Return
         End If
@@ -25,12 +45,12 @@ Public Class UsuariosForm
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
                 Dim query As String = "SELECT * FROM usuarios WHERE Rut = @rut;"
                 Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@rut", tbrut.Text)
+                    cmd.Parameters.AddWithValue("@rut", tbRut.Text)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            tbrut.Text = reader("Rut").ToString()
+                            tbRut.Text = reader("Rut").ToString()
                             tbCorreo.Text = reader("Correo").ToString()
-                            tbUsuario.Text = reader("Tipo").ToString()
+                            cbRol.SelectedItem = reader("Tipo").ToString()
                             MessageBox.Show("Usuario encontrado correctamente.")
                         Else
                             MessageBox.Show("No se encontró el usuario con ese RUT.")
@@ -47,7 +67,7 @@ Public Class UsuariosForm
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         If String.IsNullOrWhiteSpace(tbRut.Text) OrElse
            String.IsNullOrWhiteSpace(tbCorreo.Text) OrElse
-           String.IsNullOrWhiteSpace(tbUsuario.Text) Then
+           cbRol.SelectedIndex = -1 Then
             MessageBox.Show("Por favor, complete todos los campos.", "Atención")
             Return
         End If
@@ -58,7 +78,7 @@ Public Class UsuariosForm
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@rut", tbRut.Text)
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text)
-                    cmd.Parameters.AddWithValue("@tipo", tbUsuario.Text)
+                    cmd.Parameters.AddWithValue("@tipo", cbRol.SelectedItem.ToString())
                     cmd.ExecuteNonQuery()
                 End Using
             End Using
@@ -86,7 +106,7 @@ Public Class UsuariosForm
                 Dim query As String = "UPDATE usuarios SET Correo=@correo, Tipo=@tipo WHERE Rut=@rut;"
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text)
-                    cmd.Parameters.AddWithValue("@tipo", tbUsuario.Text)
+                    cmd.Parameters.AddWithValue("@tipo", cbRol.SelectedItem.ToString())
                     cmd.Parameters.AddWithValue("@rut", tbRut.Text)
 
                     Dim filas As Integer = cmd.ExecuteNonQuery()
@@ -104,7 +124,7 @@ Public Class UsuariosForm
     End Sub
 
     ' Eliminar usuario
-    Private Sub btnEiminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If String.IsNullOrWhiteSpace(tbRut.Text) Then
             MessageBox.Show("Ingrese el RUT del usuario que desea eliminar.", "Atención")
             Return
@@ -134,7 +154,7 @@ Public Class UsuariosForm
     End Sub
 
     ' Volver al menú
-    Private Sub BtnVolver_Click(sender As Object, e As EventArgs) Handles BtnVolver.Click
+    Private Sub BtnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Dim adminMenu As New AdminForm()
         adminMenu.Show()
         Me.Close()
@@ -142,13 +162,14 @@ Public Class UsuariosForm
 
     ' Limpiar todos los campos
     Private Sub LimpiarCampos()
-        tbrut.Clear()
+        tbRut.Clear()
         tbCorreo.Clear()
-
+        cbRol.SelectedIndex = -1
     End Sub
 
+    ' Al cargar el formulario
     Private Sub UsuariosForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
+        CargarRoles()
     End Sub
+
 End Class
