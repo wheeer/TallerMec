@@ -21,6 +21,7 @@ Public Class UsuariosForm
         End Try
     End Sub
 
+
     Public Sub New()
         InitializeComponent()
         CargarRoles()
