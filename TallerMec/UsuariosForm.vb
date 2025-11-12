@@ -2,6 +2,17 @@ Imports MySql.Data.MySqlClient
 
 Public Class UsuariosForm
 
+    Public Sub New()
+        InitializeComponent()
+        ' Nombre de la ventana
+        Me.Text = "Gestión de Usuarios"
+        ' Centrar la ventana al abrirse
+        Me.StartPosition = FormStartPosition.CenterScreen
+        ' Desactivar maximizar
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        ' Desactivar botón maximizar
+        Me.MaximizeBox = False
+    End Sub
     ' Cargar los roles en el ComboBox al iniciar el formulario
     Private Sub CargarRoles()
         Try
@@ -20,21 +31,6 @@ Public Class UsuariosForm
             MessageBox.Show("Error al cargar los roles: " & ex.Message)
         End Try
     End Sub
-
-
-    Public Sub New()
-
-        CargarRoles()
-        ' Nombre de la ventana
-        Me.Text = "Gestión de Usuarios"
-        ' Centrar la ventana al abrirse
-        Me.StartPosition = FormStartPosition.CenterScreen
-        ' Desactivar maximizar
-        Me.FormBorderStyle = FormBorderStyle.FixedSingle
-        ' Desactivar botón maximizar
-        Me.MaximizeBox = False
-    End Sub
-
     ' Buscar usuario por RUT
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         If String.IsNullOrWhiteSpace(tbRut.Text) Then
