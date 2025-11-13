@@ -42,6 +42,7 @@ Partial Class Ventas
         tbCantidad = New TextBox()
         tbRut = New TextBox()
         tbTotal = New TextBox()
+        btnHistorial = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -116,7 +117,7 @@ Partial Class Ventas
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(329, 236)
         Label3.Name = "Label3"
         Label3.Size = New Size(139, 15)
@@ -212,11 +213,21 @@ Partial Class Ventas
         tbTotal.Size = New Size(158, 23)
         tbTotal.TabIndex = 22
         ' 
+        ' btnHistorial
+        ' 
+        btnHistorial.Location = New Point(657, 407)
+        btnHistorial.Name = "btnHistorial"
+        btnHistorial.Size = New Size(131, 23)
+        btnHistorial.TabIndex = 23
+        btnHistorial.Text = "Historial"
+        btnHistorial.UseVisualStyleBackColor = True
+        ' 
         ' Ventas
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 481)
+        Controls.Add(btnHistorial)
         Controls.Add(tbTotal)
         Controls.Add(tbRut)
         Controls.Add(tbCantidad)
@@ -263,4 +274,5 @@ Partial Class Ventas
     Friend WithEvents tbCantidad As TextBox
     Friend WithEvents tbRut As TextBox
     Friend WithEvents tbTotal As TextBox
+    Friend WithEvents btnHistorial As Button
 End Class

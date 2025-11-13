@@ -17,4 +17,11 @@
         adminMenu.Show()
         Close()
     End Sub
+
+    Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
+        ' Abrir AdminForm.
+        Dim Resumen_Ventas As New Resumen_Ventas
+        Resumen_Ventas.Show()
+        Close()
+    End Sub
 End Class
