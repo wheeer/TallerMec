@@ -31,6 +31,12 @@ Public Class UsuariosForm
             MessageBox.Show("Error al cargar los roles: " & ex.Message)
         End Try
     End Sub
+
+    ' Al cargar el formulario
+    Private Sub UsuariosForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CargarRoles()
+    End Sub
+
     ' Buscar usuario por RUT
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         If String.IsNullOrWhiteSpace(tbRut.Text) Then
@@ -47,7 +53,7 @@ Public Class UsuariosForm
                         If reader.Read() Then
                             tbRut.Text = reader("Rut").ToString()
                             tbCorreo.Text = reader("Correo").ToString()
-                            tbContrasena.Text = reader("Contraseña")
+                            tbContrasena.Text = reader("Contraseña").ToString()
                             cbRol.SelectedItem = reader("Tipo").ToString()
                             MessageBox.Show("Usuario encontrado correctamente.")
                         Else
@@ -64,6 +70,7 @@ Public Class UsuariosForm
     ' Crear usuario nuevo
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         If String.IsNullOrWhiteSpace(tbRut.Text) OrElse
+           String.IsNullOrWhiteSpace(tbContrasena.Text) OrElse
            String.IsNullOrWhiteSpace(tbCorreo.Text) OrElse
            cbRol.SelectedIndex = -1 Then
             MessageBox.Show("Por favor, complete todos los campos.", "Atención")
@@ -72,10 +79,11 @@ Public Class UsuariosForm
 
         Try
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
-                Dim query As String = "INSERT INTO usuarios (Rut, Correo, Tipo) VALUES (@rut, @correo, @tipo);"
+                Dim query As String = "INSERT INTO usuarios (Rut, Contraseña, Correo, Tipo) VALUES (@rut, @contraseña, @correo, @tipo);"
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@rut", tbRut.Text)
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text)
+                    cmd.Parameters.AddWithValue("@contraseña", tbRut.Text)
                     cmd.Parameters.AddWithValue("@tipo", cbRol.SelectedItem.ToString())
                     cmd.ExecuteNonQuery()
                 End Using
@@ -101,9 +109,10 @@ Public Class UsuariosForm
 
         Try
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
-                Dim query As String = "UPDATE usuarios SET Correo=@correo, Tipo=@tipo WHERE Rut=@rut;"
+                Dim query As String = "UPDATE usuarios SET Correo=@correo, Contraseña=@contraseña, Tipo=@tipo WHERE Rut=@rut;"
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text)
+                    cmd.Parameters.AddWithValue("@contraseña", tbContrasena.Text)
                     cmd.Parameters.AddWithValue("@tipo", cbRol.SelectedItem.ToString())
                     cmd.Parameters.AddWithValue("@rut", tbRut.Text)
 
@@ -162,12 +171,10 @@ Public Class UsuariosForm
     Private Sub LimpiarCampos()
         tbRut.Clear()
         tbCorreo.Clear()
+        tbContrasena.Clear()
         cbRol.SelectedIndex = -1
     End Sub
 
-    ' Al cargar el formulario
-    Private Sub UsuariosForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarRoles()
-    End Sub
+
 
 End Class
