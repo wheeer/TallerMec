@@ -84,7 +84,7 @@
     End Sub
 
     Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
-        Dim Ventas As New ServiciosForm()
+        Dim Ventas As New Ventas()
         Ventas.Show()
         Me.Close()
     End Sub
