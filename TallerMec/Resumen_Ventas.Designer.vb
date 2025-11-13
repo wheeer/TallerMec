@@ -25,14 +25,14 @@ Partial Class Resumen_Ventas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Resumen_Ventas))
         PictureBox1 = New PictureBox()
         GroupBox1 = New GroupBox()
+        dgvHistorial = New DataGridView()
+        btVer = New Button()
+        btBuscar = New Button()
+        txtId = New TextBox()
         Label1 = New Label()
-        TextBox1 = New TextBox()
-        Button1 = New Button()
-        Button2 = New Button()
-        DataGridView1 = New DataGridView()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvHistorial, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -47,10 +47,10 @@ Partial Class Resumen_Ventas
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Controls.Add(DataGridView1)
-        GroupBox1.Controls.Add(Button2)
-        GroupBox1.Controls.Add(Button1)
-        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(dgvHistorial)
+        GroupBox1.Controls.Add(btVer)
+        GroupBox1.Controls.Add(btBuscar)
+        GroupBox1.Controls.Add(txtId)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Location = New Point(246, 92)
         GroupBox1.Name = "GroupBox1"
@@ -58,6 +58,43 @@ Partial Class Resumen_Ventas
         GroupBox1.TabIndex = 16
         GroupBox1.TabStop = False
         GroupBox1.Text = "Historial de Ventas:"
+        ' 
+        ' dgvHistorial
+        ' 
+        dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvHistorial.Location = New Point(90, 251)
+        dgvHistorial.Name = "dgvHistorial"
+        dgvHistorial.RowHeadersWidth = 62
+        dgvHistorial.Size = New Size(486, 225)
+        dgvHistorial.TabIndex = 4
+        ' 
+        ' btVer
+        ' 
+        btVer.BackColor = Color.DarkOrange
+        btVer.Location = New Point(539, 179)
+        btVer.Name = "btVer"
+        btVer.Size = New Size(106, 38)
+        btVer.TabIndex = 3
+        btVer.Text = "Ver todo"
+        btVer.UseVisualStyleBackColor = False
+        ' 
+        ' btBuscar
+        ' 
+        btBuscar.BackColor = Color.LawnGreen
+        btBuscar.Location = New Point(407, 180)
+        btBuscar.Name = "btBuscar"
+        btBuscar.Size = New Size(101, 38)
+        btBuscar.TabIndex = 2
+        btBuscar.Text = "Buscar"
+        btBuscar.UseVisualStyleBackColor = False
+        ' 
+        ' txtId
+        ' 
+        txtId.Location = New Point(256, 126)
+        txtId.Name = "txtId"
+        txtId.Size = New Size(135, 31)
+        txtId.TabIndex = 1
         ' 
         ' Label1
         ' 
@@ -67,42 +104,6 @@ Partial Class Resumen_Ventas
         Label1.Size = New Size(232, 25)
         Label1.TabIndex = 0
         Label1.Text = "Introduzca el ID de la venta:"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(256, 126)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(135, 31)
-        TextBox1.TabIndex = 1
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.LawnGreen
-        Button1.Location = New Point(407, 180)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(101, 38)
-        Button1.TabIndex = 2
-        Button1.Text = "Buscar"
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.DarkOrange
-        Button2.Location = New Point(539, 179)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(106, 38)
-        Button2.TabIndex = 3
-        Button2.Text = "Ver todo"
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(90, 251)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 62
-        DataGridView1.Size = New Size(486, 225)
-        DataGridView1.TabIndex = 4
         ' 
         ' Resumen_Ventas
         ' 
@@ -116,15 +117,31 @@ Partial Class Resumen_Ventas
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvHistorial, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtId As TextBox
+    Friend WithEvents btVer As Button
+    Friend WithEvents btBuscar As Button
+    Friend WithEvents dgvHistorial As DataGridView
+
+    Private Sub Resumen_Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+
+    End Sub
 End Class

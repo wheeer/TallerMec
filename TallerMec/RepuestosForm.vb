@@ -41,7 +41,7 @@ Public Class RepuestosForm
         End Try
     End Sub
 
-    ' Muestra los detalles del repuesto seleccionado
+
     Private Sub cmbRepuestos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRepuestos.SelectedIndexChanged
         If cmbRepuestos.SelectedIndex = -1 Then Return
 
@@ -67,7 +67,7 @@ Public Class RepuestosForm
         End Try
     End Sub
 
-    ' Botón para ingresar o actualizar un repuesto
+    ' 
     Private Sub btIngresar_Click(sender As Object, e As EventArgs) Handles btIngresar.Click
         ' Validar que los campos no estén vacíos
         If String.IsNullOrWhiteSpace(txtNombre.Text) OrElse
@@ -128,7 +128,7 @@ Public Class RepuestosForm
         End Try
     End Sub
 
-    ' Botón Editar (opcional)
+
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If repuestoSeleccionadoID = -1 Then
             MessageBox.Show("Seleccione un repuesto primero.", "Atención")
@@ -156,7 +156,7 @@ Public Class RepuestosForm
         End Try
     End Sub
 
-    ' Botón Eliminar
+
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
         If cmbRepuestos.SelectedIndex = -1 Then
             MessageBox.Show("Seleccione un repuesto primero.", "Atención")
