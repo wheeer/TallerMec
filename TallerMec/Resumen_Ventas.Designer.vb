@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Resumen_Ventas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Resumen_Ventas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Resumen_Ventas))
         PictureBox1 = New PictureBox()
@@ -30,6 +30,7 @@ Partial Class Resumen_Ventas
         btBuscar = New Button()
         txtId = New TextBox()
         Label1 = New Label()
+        btVolver = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         CType(dgvHistorial, ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +48,7 @@ Partial Class Resumen_Ventas
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(btVolver)
         GroupBox1.Controls.Add(dgvHistorial)
         GroupBox1.Controls.Add(btVer)
         GroupBox1.Controls.Add(btBuscar)
@@ -63,7 +65,7 @@ Partial Class Resumen_Ventas
         ' 
         dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvHistorial.Location = New Point(90, 251)
+        dgvHistorial.Location = New Point(97, 204)
         dgvHistorial.Name = "dgvHistorial"
         dgvHistorial.RowHeadersWidth = 62
         dgvHistorial.Size = New Size(486, 225)
@@ -72,7 +74,7 @@ Partial Class Resumen_Ventas
         ' btVer
         ' 
         btVer.BackColor = Color.DarkOrange
-        btVer.Location = New Point(539, 179)
+        btVer.Location = New Point(539, 121)
         btVer.Name = "btVer"
         btVer.Size = New Size(106, 38)
         btVer.TabIndex = 3
@@ -82,7 +84,7 @@ Partial Class Resumen_Ventas
         ' btBuscar
         ' 
         btBuscar.BackColor = Color.LawnGreen
-        btBuscar.Location = New Point(407, 180)
+        btBuscar.Location = New Point(415, 122)
         btBuscar.Name = "btBuscar"
         btBuscar.Size = New Size(101, 38)
         btBuscar.TabIndex = 2
@@ -104,6 +106,17 @@ Partial Class Resumen_Ventas
         Label1.Size = New Size(232, 25)
         Label1.TabIndex = 0
         Label1.Text = "Introduzca el ID de la venta:"
+        ' 
+        ' btVolver
+        ' 
+        btVolver.BackColor = Color.Red
+        btVolver.ForeColor = Color.White
+        btVolver.Location = New Point(533, 451)
+        btVolver.Name = "btVolver"
+        btVolver.Size = New Size(112, 34)
+        btVolver.TabIndex = 5
+        btVolver.Text = "Volver"
+        btVolver.UseVisualStyleBackColor = False
         ' 
         ' Resumen_Ventas
         ' 
@@ -128,20 +141,6 @@ Partial Class Resumen_Ventas
     Friend WithEvents btVer As Button
     Friend WithEvents btBuscar As Button
     Friend WithEvents dgvHistorial As DataGridView
+    Friend WithEvents btVolver As Button
 
-    Private Sub Resumen_Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-
-    End Sub
 End Class
