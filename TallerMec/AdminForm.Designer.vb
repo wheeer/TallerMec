@@ -37,6 +37,7 @@ Partial Class AdminForm
         btnEmpleados = New Button()
         GroupBox2 = New GroupBox()
         PictureBox1 = New PictureBox()
+        btnVentas = New Button()
         grbBotones.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +90,7 @@ Partial Class AdminForm
         ' 
         ' grbBotones
         ' 
+        grbBotones.Controls.Add(btnVentas)
         grbBotones.Controls.Add(btnServicios)
         grbBotones.Controls.Add(btnSiniestros)
         grbBotones.Controls.Add(btnRepuestos)
@@ -106,7 +108,7 @@ Partial Class AdminForm
         ' 
         ' btnServicios
         ' 
-        btnServicios.Location = New Point(17, 261)
+        btnServicios.Location = New Point(17, 235)
         btnServicios.Margin = New Padding(2)
         btnServicios.Name = "btnServicios"
         btnServicios.Size = New Size(78, 20)
@@ -116,7 +118,7 @@ Partial Class AdminForm
         ' 
         ' btnSiniestros
         ' 
-        btnSiniestros.Location = New Point(17, 221)
+        btnSiniestros.Location = New Point(17, 197)
         btnSiniestros.Margin = New Padding(2)
         btnSiniestros.Name = "btnSiniestros"
         btnSiniestros.Size = New Size(78, 20)
@@ -126,7 +128,7 @@ Partial Class AdminForm
         ' 
         ' btnRepuestos
         ' 
-        btnRepuestos.Location = New Point(17, 179)
+        btnRepuestos.Location = New Point(17, 155)
         btnRepuestos.Margin = New Padding(2)
         btnRepuestos.Name = "btnRepuestos"
         btnRepuestos.Size = New Size(78, 20)
@@ -136,7 +138,7 @@ Partial Class AdminForm
         ' 
         ' btnClientes
         ' 
-        btnClientes.Location = New Point(17, 139)
+        btnClientes.Location = New Point(17, 109)
         btnClientes.Margin = New Padding(2)
         btnClientes.Name = "btnClientes"
         btnClientes.Size = New Size(78, 20)
@@ -146,7 +148,7 @@ Partial Class AdminForm
         ' 
         ' btnUsuarios
         ' 
-        btnUsuarios.Location = New Point(17, 98)
+        btnUsuarios.Location = New Point(17, 67)
         btnUsuarios.Margin = New Padding(2)
         btnUsuarios.Name = "btnUsuarios"
         btnUsuarios.Size = New Size(78, 20)
@@ -156,7 +158,7 @@ Partial Class AdminForm
         ' 
         ' btnEmpleados
         ' 
-        btnEmpleados.Location = New Point(17, 55)
+        btnEmpleados.Location = New Point(17, 25)
         btnEmpleados.Margin = New Padding(2)
         btnEmpleados.Name = "btnEmpleados"
         btnEmpleados.Size = New Size(78, 20)
@@ -185,6 +187,16 @@ Partial Class AdminForm
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
+        ' 
+        ' btnVentas
+        ' 
+        btnVentas.Location = New Point(17, 273)
+        btnVentas.Margin = New Padding(2)
+        btnVentas.Name = "btnVentas"
+        btnVentas.Size = New Size(78, 20)
+        btnVentas.TabIndex = 12
+        btnVentas.Text = "Ventas"
+        btnVentas.UseVisualStyleBackColor = True
         ' 
         ' AdminForm
         ' 
@@ -221,4 +233,5 @@ Partial Class AdminForm
     Friend WithEvents btnEmpleados As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnVentas As Button
 End Class
