@@ -25,12 +25,12 @@ Partial Class Resumen_Ventas
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Resumen_Ventas))
         PictureBox1 = New PictureBox()
         GroupBox1 = New GroupBox()
+        btVolver = New Button()
         dgvHistorial = New DataGridView()
         btVer = New Button()
         btBuscar = New Button()
         txtId = New TextBox()
         Label1 = New Label()
-        btVolver = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         CType(dgvHistorial, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,27 +54,38 @@ Partial Class Resumen_Ventas
         GroupBox1.Controls.Add(btBuscar)
         GroupBox1.Controls.Add(txtId)
         GroupBox1.Controls.Add(Label1)
-        GroupBox1.Location = New Point(246, 92)
+        GroupBox1.Location = New Point(209, 91)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(666, 507)
+        GroupBox1.Size = New Size(772, 507)
         GroupBox1.TabIndex = 16
         GroupBox1.TabStop = False
         GroupBox1.Text = "Historial de Ventas:"
+        ' 
+        ' btVolver
+        ' 
+        btVolver.BackColor = Color.Red
+        btVolver.ForeColor = Color.White
+        btVolver.Location = New Point(654, 467)
+        btVolver.Name = "btVolver"
+        btVolver.Size = New Size(112, 34)
+        btVolver.TabIndex = 5
+        btVolver.Text = "Volver"
+        btVolver.UseVisualStyleBackColor = False
         ' 
         ' dgvHistorial
         ' 
         dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvHistorial.Location = New Point(97, 204)
+        dgvHistorial.Location = New Point(11, 179)
         dgvHistorial.Name = "dgvHistorial"
         dgvHistorial.RowHeadersWidth = 62
-        dgvHistorial.Size = New Size(486, 225)
+        dgvHistorial.Size = New Size(749, 272)
         dgvHistorial.TabIndex = 4
         ' 
         ' btVer
         ' 
         btVer.BackColor = Color.DarkOrange
-        btVer.Location = New Point(539, 121)
+        btVer.Location = New Point(615, 119)
         btVer.Name = "btVer"
         btVer.Size = New Size(106, 38)
         btVer.TabIndex = 3
@@ -84,7 +95,7 @@ Partial Class Resumen_Ventas
         ' btBuscar
         ' 
         btBuscar.BackColor = Color.LawnGreen
-        btBuscar.Location = New Point(415, 122)
+        btBuscar.Location = New Point(481, 119)
         btBuscar.Name = "btBuscar"
         btBuscar.Size = New Size(101, 38)
         btBuscar.TabIndex = 2
@@ -93,7 +104,7 @@ Partial Class Resumen_Ventas
         ' 
         ' txtId
         ' 
-        txtId.Location = New Point(256, 126)
+        txtId.Location = New Point(312, 123)
         txtId.Name = "txtId"
         txtId.Size = New Size(135, 31)
         txtId.TabIndex = 1
@@ -101,22 +112,11 @@ Partial Class Resumen_Ventas
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(18, 126)
+        Label1.Location = New Point(39, 126)
         Label1.Name = "Label1"
         Label1.Size = New Size(232, 25)
         Label1.TabIndex = 0
         Label1.Text = "Introduzca el ID de la venta:"
-        ' 
-        ' btVolver
-        ' 
-        btVolver.BackColor = Color.Red
-        btVolver.ForeColor = Color.White
-        btVolver.Location = New Point(533, 451)
-        btVolver.Name = "btVolver"
-        btVolver.Size = New Size(112, 34)
-        btVolver.TabIndex = 5
-        btVolver.Text = "Volver"
-        btVolver.UseVisualStyleBackColor = False
         ' 
         ' Resumen_Ventas
         ' 
