@@ -43,6 +43,8 @@ Partial Class Ventas
         tbRut = New TextBox()
         tbTotal = New TextBox()
         btnHistorial = New Button()
+        btnVender = New Button()
+        dtFechaCompra = New DateTimePicker()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -117,7 +119,7 @@ Partial Class Ventas
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(329, 236)
         Label3.Name = "Label3"
         Label3.Size = New Size(139, 15)
@@ -222,11 +224,29 @@ Partial Class Ventas
         btnHistorial.Text = "Historial"
         btnHistorial.UseVisualStyleBackColor = True
         ' 
+        ' btnVender
+        ' 
+        btnVender.Location = New Point(520, 442)
+        btnVender.Name = "btnVender"
+        btnVender.Size = New Size(131, 23)
+        btnVender.TabIndex = 24
+        btnVender.Text = "Vender"
+        btnVender.UseVisualStyleBackColor = True
+        ' 
+        ' dtFechaCompra
+        ' 
+        dtFechaCompra.Location = New Point(352, 409)
+        dtFechaCompra.Name = "dtFechaCompra"
+        dtFechaCompra.Size = New Size(200, 23)
+        dtFechaCompra.TabIndex = 25
+        ' 
         ' Ventas
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 481)
+        Controls.Add(dtFechaCompra)
+        Controls.Add(btnVender)
         Controls.Add(btnHistorial)
         Controls.Add(tbTotal)
         Controls.Add(tbRut)
@@ -275,4 +295,6 @@ Partial Class Ventas
     Friend WithEvents tbRut As TextBox
     Friend WithEvents tbTotal As TextBox
     Friend WithEvents btnHistorial As Button
+    Friend WithEvents btnVender As Button
+    Friend WithEvents dtFechaCompra As DateTimePicker
 End Class

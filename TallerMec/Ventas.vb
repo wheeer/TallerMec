@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Ventas
 
-
     Private StockActual As Integer = 0
     Public Sub New()
         InitializeComponent()
