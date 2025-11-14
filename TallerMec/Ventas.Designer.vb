@@ -22,6 +22,8 @@ Partial Class Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
+        Dim GroupBox1 As GroupBox
         btnVolver = New Button()
         DataGridView1 = New DataGridView()
         MySqlCommand1 = New MySql.Data.MySqlClient.MySqlCommand()
@@ -33,10 +35,6 @@ Partial Class Ventas
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
-        Label6 = New Label()
-        Label7 = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
         tbNombre = New TextBox()
         tbPrecio = New TextBox()
         tbCantidad = New TextBox()
@@ -45,12 +43,20 @@ Partial Class Ventas
         btnHistorial = New Button()
         btnVender = New Button()
         dtFechaCompra = New DateTimePicker()
+        PictureBox1 = New PictureBox()
+        Label6 = New Label()
+        Label10 = New Label()
+        Label8 = New Label()
+        Label7 = New Label()
+        GroupBox1 = New GroupBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnVolver
         ' 
-        btnVolver.Location = New Point(657, 442)
+        btnVolver.Location = New Point(657, 459)
         btnVolver.Name = "btnVolver"
         btnVolver.Size = New Size(131, 23)
         btnVolver.TabIndex = 3
@@ -59,6 +65,7 @@ Partial Class Ventas
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.BackgroundColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(172, 91)
         DataGridView1.Name = "DataGridView1"
@@ -76,7 +83,7 @@ Partial Class Ventas
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(203, 9)
+        Label1.Location = New Point(203, 19)
         Label1.Name = "Label1"
         Label1.Size = New Size(384, 25)
         Label1.TabIndex = 6
@@ -120,7 +127,7 @@ Partial Class Ventas
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(329, 236)
+        Label3.Location = New Point(141, 19)
         Label3.Name = "Label3"
         Label3.Size = New Size(139, 15)
         Label3.TabIndex = 11
@@ -129,88 +136,54 @@ Partial Class Ventas
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(267, 270)
+        Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(13, 53)
         Label4.Name = "Label4"
-        Label4.Size = New Size(57, 15)
+        Label4.Size = New Size(58, 15)
         Label4.TabIndex = 12
         Label4.Text = "Nombre :"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(267, 305)
+        Label5.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(13, 88)
         Label5.Name = "Label5"
         Label5.Size = New Size(46, 15)
         Label5.TabIndex = 13
         Label5.Text = "Precio :"
         ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(267, 343)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(61, 15)
-        Label6.TabIndex = 14
-        Label6.Text = "Cantidad :"
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(269, 381)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(71, 15)
-        Label7.TabIndex = 15
-        Label7.Text = "Rut Cliente :"
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(269, 415)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(44, 15)
-        Label8.TabIndex = 16
-        Label8.Text = "Fecha :"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(269, 445)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(81, 15)
-        Label9.TabIndex = 17
-        Label9.Text = "Total a Pagar :"
-        ' 
         ' tbNombre
         ' 
-        tbNombre.Location = New Point(352, 267)
+        tbNombre.Location = New Point(112, 50)
         tbNombre.Name = "tbNombre"
         tbNombre.Size = New Size(158, 23)
         tbNombre.TabIndex = 18
         ' 
         ' tbPrecio
         ' 
-        tbPrecio.Location = New Point(352, 302)
+        tbPrecio.Location = New Point(112, 85)
         tbPrecio.Name = "tbPrecio"
         tbPrecio.Size = New Size(158, 23)
         tbPrecio.TabIndex = 19
         ' 
         ' tbCantidad
         ' 
-        tbCantidad.Location = New Point(352, 340)
+        tbCantidad.Location = New Point(112, 123)
         tbCantidad.Name = "tbCantidad"
         tbCantidad.Size = New Size(158, 23)
         tbCantidad.TabIndex = 20
         ' 
         ' tbRut
         ' 
-        tbRut.Location = New Point(352, 378)
+        tbRut.Location = New Point(112, 161)
         tbRut.Name = "tbRut"
         tbRut.Size = New Size(158, 23)
         tbRut.TabIndex = 21
         ' 
         ' tbTotal
         ' 
-        tbTotal.Location = New Point(352, 442)
+        tbTotal.Location = New Point(112, 225)
         tbTotal.Name = "tbTotal"
         tbTotal.Size = New Size(158, 23)
         tbTotal.TabIndex = 22
@@ -226,40 +199,102 @@ Partial Class Ventas
         ' 
         ' btnVender
         ' 
-        btnVender.Location = New Point(520, 442)
+        btnVender.Location = New Point(280, 225)
         btnVender.Name = "btnVender"
-        btnVender.Size = New Size(131, 23)
+        btnVender.Size = New Size(118, 23)
         btnVender.TabIndex = 24
         btnVender.Text = "Vender"
         btnVender.UseVisualStyleBackColor = True
         ' 
         ' dtFechaCompra
         ' 
-        dtFechaCompra.Location = New Point(352, 409)
+        dtFechaCompra.Location = New Point(112, 192)
         dtFechaCompra.Name = "dtFechaCompra"
-        dtFechaCompra.Size = New Size(200, 23)
+        dtFechaCompra.Size = New Size(212, 23)
         dtFechaCompra.TabIndex = 25
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Dock = DockStyle.Fill
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(800, 510)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 26
+        PictureBox1.TabStop = False
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.BackColor = Color.Green
+        GroupBox1.Controls.Add(Label7)
+        GroupBox1.Controls.Add(Label8)
+        GroupBox1.Controls.Add(Label10)
+        GroupBox1.Controls.Add(Label6)
+        GroupBox1.Controls.Add(tbNombre)
+        GroupBox1.Controls.Add(dtFechaCompra)
+        GroupBox1.Controls.Add(Label3)
+        GroupBox1.Controls.Add(btnVender)
+        GroupBox1.Controls.Add(Label4)
+        GroupBox1.Controls.Add(Label5)
+        GroupBox1.Controls.Add(tbTotal)
+        GroupBox1.Controls.Add(tbRut)
+        GroupBox1.Controls.Add(tbCantidad)
+        GroupBox1.Controls.Add(tbPrecio)
+        GroupBox1.Location = New Point(203, 230)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(408, 263)
+        GroupBox1.TabIndex = 27
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Ventas"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(15, 126)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(57, 15)
+        Label6.TabIndex = 26
+        Label6.Text = "Cantidad"
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label10.Location = New Point(15, 164)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(71, 15)
+        Label10.TabIndex = 27
+        Label10.Text = "Rut Cliente :"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label8.Location = New Point(15, 228)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(87, 15)
+        Label8.TabIndex = 29
+        Label8.Text = "Total a Pagar :"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label7.Location = New Point(15, 198)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(44, 15)
+        Label7.TabIndex = 30
+        Label7.Text = "Fecha :"
         ' 
         ' Ventas
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 481)
-        Controls.Add(dtFechaCompra)
-        Controls.Add(btnVender)
+        ClientSize = New Size(800, 510)
+        Controls.Add(GroupBox1)
         Controls.Add(btnHistorial)
-        Controls.Add(tbTotal)
-        Controls.Add(tbRut)
-        Controls.Add(tbCantidad)
-        Controls.Add(tbPrecio)
-        Controls.Add(tbNombre)
-        Controls.Add(Label9)
-        Controls.Add(Label8)
-        Controls.Add(Label7)
-        Controls.Add(Label6)
-        Controls.Add(Label5)
-        Controls.Add(Label4)
-        Controls.Add(Label3)
         Controls.Add(btnVerTodo)
         Controls.Add(btnBuscar)
         Controls.Add(tbId)
@@ -267,9 +302,13 @@ Partial Class Ventas
         Controls.Add(Label1)
         Controls.Add(DataGridView1)
         Controls.Add(btnVolver)
+        Controls.Add(PictureBox1)
         Name = "Ventas"
         Text = "Ventas"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -285,10 +324,6 @@ Partial Class Ventas
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents tbNombre As TextBox
     Friend WithEvents tbPrecio As TextBox
     Friend WithEvents tbCantidad As TextBox
@@ -297,4 +332,10 @@ Partial Class Ventas
     Friend WithEvents btnHistorial As Button
     Friend WithEvents btnVender As Button
     Friend WithEvents dtFechaCompra As DateTimePicker
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class
