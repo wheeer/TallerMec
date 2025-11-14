@@ -64,7 +64,7 @@ Public Class Ventas
     ' Calcular total al cambiar cantidad
     Private Sub tbCantidad_TextChanged(sender As Object, e As EventArgs) Handles tbCantidad.TextChanged
         If tbCantidad.Text.Trim() = "" Or tbPrecio.Text.Trim() = "" Then Exit Sub
-
+        ' Calcular total según cantidad y precio.
         Dim cant As Integer
         If Integer.TryParse(tbCantidad.Text, cant) Then
             tbTotal.Text = (cant * Decimal.Parse(tbPrecio.Text)).ToString()
