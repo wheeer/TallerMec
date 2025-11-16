@@ -25,6 +25,7 @@ Partial Class SiniestrosForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SiniestrosForm))
         btnVolver = New Button()
         PictureBox1 = New PictureBox()
+        btnHistorial = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -48,11 +49,21 @@ Partial Class SiniestrosForm
         PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
         ' 
+        ' btnHistorial
+        ' 
+        btnHistorial.Location = New Point(657, 374)
+        btnHistorial.Name = "btnHistorial"
+        btnHistorial.Size = New Size(131, 23)
+        btnHistorial.TabIndex = 4
+        btnHistorial.Text = "Historial Sinistros"
+        btnHistorial.UseVisualStyleBackColor = True
+        ' 
         ' SiniestrosForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(btnHistorial)
         Controls.Add(btnVolver)
         Controls.Add(PictureBox1)
         Name = "SiniestrosForm"
@@ -63,4 +74,5 @@ Partial Class SiniestrosForm
 
     Friend WithEvents btnVolver As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnHistorial As Button
 End Class

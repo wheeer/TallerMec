@@ -27,12 +27,10 @@
 
             Case "Mecanico"
                 ' Acceso limitado a empleados y usuarios ocultando botones.
-                btnEmpleados.Visible = False
                 btnUsuarios.Visible = False
                 btnRepuestos.Visible = True
                 btnClientes.Visible = True
                 btnSiniestros.Visible = True
-                btnServicios.Visible = True
 
             Case Else
                 ' Sin acceso
@@ -44,12 +42,6 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Form1.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btnEmpleados_Click(sender As Object, e As EventArgs) Handles btnEmpleados.Click
-        Dim empleadosForm As New EmpleadosForm()
-        empleadosForm.Show()
         Me.Close()
     End Sub
 
@@ -74,12 +66,6 @@
     Private Sub btnSiniestros_Click(sender As Object, e As EventArgs) Handles btnSiniestros.Click
         Dim siniestrosForm As New SiniestrosForm()
         siniestrosForm.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btnServicios_Click(sender As Object, e As EventArgs) Handles btnServicios.Click
-        Dim serviciosForm As New ServiciosForm()
-        serviciosForm.Show()
         Me.Close()
     End Sub
 

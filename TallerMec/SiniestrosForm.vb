@@ -17,4 +17,10 @@
         adminMenu.Show()
         Me.Close()
     End Sub
+
+    Private Sub btnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
+        Dim historialSiniestros As New Historial_Siniestros()
+        historialSiniestros.Show()
+        Me.Close()
+    End Sub
 End Class

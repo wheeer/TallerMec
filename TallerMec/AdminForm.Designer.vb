@@ -29,15 +29,13 @@ Partial Class AdminForm
         Label2 = New Label()
         lbRol = New Label()
         grbBotones = New GroupBox()
-        btnServicios = New Button()
+        btnVentas = New Button()
         btnSiniestros = New Button()
         btnRepuestos = New Button()
         btnClientes = New Button()
         btnUsuarios = New Button()
-        btnEmpleados = New Button()
         GroupBox2 = New GroupBox()
         PictureBox1 = New PictureBox()
-        btnVentas = New Button()
         grbBotones.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -91,12 +89,10 @@ Partial Class AdminForm
         ' grbBotones
         ' 
         grbBotones.Controls.Add(btnVentas)
-        grbBotones.Controls.Add(btnServicios)
         grbBotones.Controls.Add(btnSiniestros)
         grbBotones.Controls.Add(btnRepuestos)
         grbBotones.Controls.Add(btnClientes)
         grbBotones.Controls.Add(btnUsuarios)
-        grbBotones.Controls.Add(btnEmpleados)
         grbBotones.Location = New Point(7, 97)
         grbBotones.Margin = New Padding(2)
         grbBotones.Name = "grbBotones"
@@ -106,15 +102,15 @@ Partial Class AdminForm
         grbBotones.TabStop = False
         grbBotones.Text = "Menú"
         ' 
-        ' btnServicios
+        ' btnVentas
         ' 
-        btnServicios.Location = New Point(17, 235)
-        btnServicios.Margin = New Padding(2)
-        btnServicios.Name = "btnServicios"
-        btnServicios.Size = New Size(78, 20)
-        btnServicios.TabIndex = 11
-        btnServicios.Text = "Servicios"
-        btnServicios.UseVisualStyleBackColor = True
+        btnVentas.Location = New Point(17, 238)
+        btnVentas.Margin = New Padding(2)
+        btnVentas.Name = "btnVentas"
+        btnVentas.Size = New Size(78, 20)
+        btnVentas.TabIndex = 12
+        btnVentas.Text = "Ventas"
+        btnVentas.UseVisualStyleBackColor = True
         ' 
         ' btnSiniestros
         ' 
@@ -156,16 +152,6 @@ Partial Class AdminForm
         btnUsuarios.Text = "Usuarios"
         btnUsuarios.UseVisualStyleBackColor = True
         ' 
-        ' btnEmpleados
-        ' 
-        btnEmpleados.Location = New Point(17, 25)
-        btnEmpleados.Margin = New Padding(2)
-        btnEmpleados.Name = "btnEmpleados"
-        btnEmpleados.Size = New Size(78, 20)
-        btnEmpleados.TabIndex = 6
-        btnEmpleados.Text = "Empleados"
-        btnEmpleados.UseVisualStyleBackColor = True
-        ' 
         ' GroupBox2
         ' 
         GroupBox2.Controls.Add(PictureBox1)
@@ -187,16 +173,6 @@ Partial Class AdminForm
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
-        ' 
-        ' btnVentas
-        ' 
-        btnVentas.Location = New Point(17, 273)
-        btnVentas.Margin = New Padding(2)
-        btnVentas.Name = "btnVentas"
-        btnVentas.Size = New Size(78, 20)
-        btnVentas.TabIndex = 12
-        btnVentas.Text = "Ventas"
-        btnVentas.UseVisualStyleBackColor = True
         ' 
         ' AdminForm
         ' 
@@ -225,12 +201,10 @@ Partial Class AdminForm
     Friend WithEvents Label2 As Label
     Friend WithEvents lbRol As Label
     Friend WithEvents grbBotones As GroupBox
-    Friend WithEvents btnServicios As Button
     Friend WithEvents btnSiniestros As Button
     Friend WithEvents btnRepuestos As Button
     Friend WithEvents btnClientes As Button
     Friend WithEvents btnUsuarios As Button
-    Friend WithEvents btnEmpleados As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnVentas As Button
