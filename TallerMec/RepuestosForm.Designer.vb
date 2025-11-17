@@ -67,7 +67,7 @@ Partial Class RepuestosForm
         ' cmbRepuestos
         ' 
         cmbRepuestos.FormattingEnabled = True
-        cmbRepuestos.Location = New Point(178, 187)
+        cmbRepuestos.Location = New Point(179, 187)
         cmbRepuestos.Name = "cmbRepuestos"
         cmbRepuestos.Size = New Size(182, 33)
         cmbRepuestos.TabIndex = 4
