@@ -27,7 +27,6 @@ Partial Class RepuestosForm
         Label1 = New Label()
         cmbRepuestos = New ComboBox()
         Label2 = New Label()
-        btVer = New Button()
         btEditar = New Button()
         btIngresar = New Button()
         btEliminar = New Button()
@@ -68,7 +67,7 @@ Partial Class RepuestosForm
         ' cmbRepuestos
         ' 
         cmbRepuestos.FormattingEnabled = True
-        cmbRepuestos.Location = New Point(112, 196)
+        cmbRepuestos.Location = New Point(178, 187)
         cmbRepuestos.Name = "cmbRepuestos"
         cmbRepuestos.Size = New Size(182, 33)
         cmbRepuestos.TabIndex = 4
@@ -81,16 +80,6 @@ Partial Class RepuestosForm
         Label2.Size = New Size(191, 25)
         Label2.TabIndex = 5
         Label2.Text = "Seleccione el repuesto:"
-        ' 
-        ' btVer
-        ' 
-        btVer.BackColor = Color.LawnGreen
-        btVer.Location = New Point(317, 194)
-        btVer.Name = "btVer"
-        btVer.Size = New Size(112, 34)
-        btVer.TabIndex = 6
-        btVer.Text = "Ver"
-        btVer.UseVisualStyleBackColor = False
         ' 
         ' btEditar
         ' 
@@ -236,7 +225,6 @@ Partial Class RepuestosForm
         Controls.Add(btEliminar)
         Controls.Add(btIngresar)
         Controls.Add(btEditar)
-        Controls.Add(btVer)
         Controls.Add(Label2)
         Controls.Add(cmbRepuestos)
         Controls.Add(Label1)
@@ -254,7 +242,6 @@ Partial Class RepuestosForm
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbRepuestos As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents btVer As Button
     Friend WithEvents btEditar As Button
     Friend WithEvents btIngresar As Button
     Friend WithEvents btEliminar As Button
