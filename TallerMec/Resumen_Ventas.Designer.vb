@@ -31,6 +31,8 @@ Partial Class Resumen_Ventas
         btBuscar = New Button()
         txtId = New TextBox()
         Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         CType(dgvHistorial, ComponentModel.ISupportInitialize).BeginInit()
@@ -48,6 +50,7 @@ Partial Class Resumen_Ventas
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(btVolver)
         GroupBox1.Controls.Add(dgvHistorial)
         GroupBox1.Controls.Add(btVer)
@@ -119,11 +122,32 @@ Partial Class Resumen_Ventas
         Label1.TabIndex = 0
         Label1.Text = "Introduzca el ID de la venta:"
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(366, 81)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(74, 25)
+        Label2.TabIndex = 6
+        Label2.Text = "Label2"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(529, 19)
+        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(127, 40)
+        Label3.TabIndex = 17
+        Label3.Text = "Historial"
+        ' 
         ' Resumen_Ventas
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1193, 661)
+        Controls.Add(Label3)
         Controls.Add(GroupBox1)
         Controls.Add(PictureBox1)
         Name = "Resumen_Ventas"
@@ -133,6 +157,7 @@ Partial Class Resumen_Ventas
         GroupBox1.PerformLayout()
         CType(dgvHistorial, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
@@ -143,5 +168,7 @@ Partial Class Resumen_Ventas
     Friend WithEvents btBuscar As Button
     Friend WithEvents dgvHistorial As DataGridView
     Friend WithEvents btVolver As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 
 End Class
