@@ -54,6 +54,7 @@ Partial Class Resumen_Ventas
         GroupBox1.Controls.Add(btBuscar)
         GroupBox1.Controls.Add(txtId)
         GroupBox1.Controls.Add(Label1)
+        GroupBox1.Font = New Font("Times New Roman", 11F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         GroupBox1.Location = New Point(209, 91)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(772, 507)
@@ -87,9 +88,9 @@ Partial Class Resumen_Ventas
         btVer.BackColor = Color.DarkOrange
         btVer.Location = New Point(615, 119)
         btVer.Name = "btVer"
-        btVer.Size = New Size(106, 38)
+        btVer.Size = New Size(126, 38)
         btVer.TabIndex = 3
-        btVer.Text = "Ver todo"
+        btVer.Text = "Ver todo🔎"
         btVer.UseVisualStyleBackColor = False
         ' 
         ' btBuscar
@@ -97,16 +98,16 @@ Partial Class Resumen_Ventas
         btBuscar.BackColor = Color.LawnGreen
         btBuscar.Location = New Point(481, 119)
         btBuscar.Name = "btBuscar"
-        btBuscar.Size = New Size(101, 38)
+        btBuscar.Size = New Size(107, 38)
         btBuscar.TabIndex = 2
-        btBuscar.Text = "Buscar"
+        btBuscar.Text = "Buscar🔎"
         btBuscar.UseVisualStyleBackColor = False
         ' 
         ' txtId
         ' 
         txtId.Location = New Point(312, 123)
         txtId.Name = "txtId"
-        txtId.Size = New Size(135, 31)
+        txtId.Size = New Size(135, 33)
         txtId.TabIndex = 1
         ' 
         ' Label1
@@ -114,7 +115,7 @@ Partial Class Resumen_Ventas
         Label1.AutoSize = True
         Label1.Location = New Point(39, 126)
         Label1.Name = "Label1"
-        Label1.Size = New Size(232, 25)
+        Label1.Size = New Size(275, 25)
         Label1.TabIndex = 0
         Label1.Text = "Introduzca el ID de la venta:"
         ' 
