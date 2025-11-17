@@ -26,24 +26,24 @@ Partial Class SiniestrosForm
         btnHistorial = New Button()
         PictureBox1 = New PictureBox()
         GroupBox1 = New GroupBox()
-        DataGridViewSelectionMode = New DataGridView()
+        dgvHistorial = New DataGridView()
         cbEstado = New ComboBox()
         btnVerTodo = New Button()
         btnBuscar = New Button()
-        TextBox1 = New TextBox()
+        tbRut = New TextBox()
         Label2 = New Label()
         Label1 = New Label()
         Label3 = New Label()
         GroupBox2 = New GroupBox()
         chbModificar = New CheckBox()
         chbIngresar = New CheckBox()
-        TextBox8 = New TextBox()
-        TextBox7 = New TextBox()
-        TextBox6 = New TextBox()
-        TextBox5 = New TextBox()
-        TextBox4 = New TextBox()
-        TextBox3 = New TextBox()
-        TextBox2 = New TextBox()
+        txtDetalle = New TextBox()
+        txtSeguro = New TextBox()
+        txtCliente = New TextBox()
+        txtCompañia = New TextBox()
+        txtEstado = New TextBox()
+        txtFecha = New TextBox()
+        txtId = New TextBox()
         btnModificar = New Button()
         btnGuardar = New Button()
         Label10 = New Label()
@@ -55,7 +55,7 @@ Partial Class SiniestrosForm
         Label4 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
-        CType(DataGridViewSelectionMode, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvHistorial, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
@@ -91,11 +91,11 @@ Partial Class SiniestrosForm
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Controls.Add(DataGridViewSelectionMode)
+        GroupBox1.Controls.Add(dgvHistorial)
         GroupBox1.Controls.Add(cbEstado)
         GroupBox1.Controls.Add(btnVerTodo)
         GroupBox1.Controls.Add(btnBuscar)
-        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(tbRut)
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -106,14 +106,14 @@ Partial Class SiniestrosForm
         GroupBox1.TabStop = False
         GroupBox1.Text = "Busqueda de Siniestros"
         ' 
-        ' DataGridViewSelectionMode
+        ' dgvHistorial
         ' 
-        DataGridViewSelectionMode.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewSelectionMode.Location = New Point(0, 107)
-        DataGridViewSelectionMode.Name = "DataGridViewSelectionMode"
-        DataGridViewSelectionMode.RowHeadersWidth = 62
-        DataGridViewSelectionMode.Size = New Size(913, 149)
-        DataGridViewSelectionMode.TabIndex = 6
+        dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvHistorial.Location = New Point(0, 107)
+        dgvHistorial.Name = "dgvHistorial"
+        dgvHistorial.RowHeadersWidth = 62
+        dgvHistorial.Size = New Size(913, 149)
+        dgvHistorial.TabIndex = 6
         ' 
         ' cbEstado
         ' 
@@ -145,13 +145,13 @@ Partial Class SiniestrosForm
         btnBuscar.Text = "Buscar🔎"
         btnBuscar.UseVisualStyleBackColor = True
         ' 
-        ' TextBox1
+        ' tbRut
         ' 
-        TextBox1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(119, 44)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(222, 31)
-        TextBox1.TabIndex = 2
+        tbRut.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        tbRut.Location = New Point(119, 44)
+        tbRut.Name = "tbRut"
+        tbRut.Size = New Size(222, 31)
+        tbRut.TabIndex = 2
         ' 
         ' Label2
         ' 
@@ -187,13 +187,13 @@ Partial Class SiniestrosForm
         ' 
         GroupBox2.Controls.Add(chbModificar)
         GroupBox2.Controls.Add(chbIngresar)
-        GroupBox2.Controls.Add(TextBox8)
-        GroupBox2.Controls.Add(TextBox7)
-        GroupBox2.Controls.Add(TextBox6)
-        GroupBox2.Controls.Add(TextBox5)
-        GroupBox2.Controls.Add(TextBox4)
-        GroupBox2.Controls.Add(TextBox3)
-        GroupBox2.Controls.Add(TextBox2)
+        GroupBox2.Controls.Add(txtDetalle)
+        GroupBox2.Controls.Add(txtSeguro)
+        GroupBox2.Controls.Add(txtCliente)
+        GroupBox2.Controls.Add(txtCompañia)
+        GroupBox2.Controls.Add(txtEstado)
+        GroupBox2.Controls.Add(txtFecha)
+        GroupBox2.Controls.Add(txtId)
         GroupBox2.Controls.Add(btnModificar)
         GroupBox2.Controls.Add(btnGuardar)
         GroupBox2.Controls.Add(Label10)
@@ -231,61 +231,61 @@ Partial Class SiniestrosForm
         chbIngresar.Text = "Ingresar Siniestros"
         chbIngresar.UseVisualStyleBackColor = True
         ' 
-        ' TextBox8
+        ' txtDetalle
         ' 
-        TextBox8.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox8.Location = New Point(101, 125)
-        TextBox8.Name = "TextBox8"
-        TextBox8.Size = New Size(286, 39)
-        TextBox8.TabIndex = 15
+        txtDetalle.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtDetalle.Location = New Point(101, 125)
+        txtDetalle.Name = "txtDetalle"
+        txtDetalle.Size = New Size(286, 39)
+        txtDetalle.TabIndex = 15
         ' 
-        ' TextBox7
+        ' txtSeguro
         ' 
-        TextBox7.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox7.Location = New Point(101, 348)
-        TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(286, 31)
-        TextBox7.TabIndex = 14
+        txtSeguro.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtSeguro.Location = New Point(101, 348)
+        txtSeguro.Name = "txtSeguro"
+        txtSeguro.Size = New Size(286, 31)
+        txtSeguro.TabIndex = 14
         ' 
-        ' TextBox6
+        ' txtCliente
         ' 
-        TextBox6.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox6.Location = New Point(101, 308)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(286, 31)
-        TextBox6.TabIndex = 13
+        txtCliente.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtCliente.Location = New Point(101, 308)
+        txtCliente.Name = "txtCliente"
+        txtCliente.Size = New Size(286, 31)
+        txtCliente.TabIndex = 13
         ' 
-        ' TextBox5
+        ' txtCompañia
         ' 
-        TextBox5.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox5.Location = New Point(101, 267)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(286, 31)
-        TextBox5.TabIndex = 12
+        txtCompañia.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtCompañia.Location = New Point(101, 267)
+        txtCompañia.Name = "txtCompañia"
+        txtCompañia.Size = New Size(286, 31)
+        txtCompañia.TabIndex = 12
         ' 
-        ' TextBox4
+        ' txtEstado
         ' 
-        TextBox4.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox4.Location = New Point(101, 178)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(286, 31)
-        TextBox4.TabIndex = 11
+        txtEstado.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtEstado.Location = New Point(101, 178)
+        txtEstado.Name = "txtEstado"
+        txtEstado.Size = New Size(286, 31)
+        txtEstado.TabIndex = 11
         ' 
-        ' TextBox3
+        ' txtFecha
         ' 
-        TextBox3.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox3.Location = New Point(101, 223)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(136, 31)
-        TextBox3.TabIndex = 10
+        txtFecha.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtFecha.Location = New Point(101, 223)
+        txtFecha.Name = "txtFecha"
+        txtFecha.Size = New Size(136, 31)
+        txtFecha.TabIndex = 10
         ' 
-        ' TextBox2
+        ' txtId
         ' 
-        TextBox2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox2.Location = New Point(101, 78)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(109, 31)
-        TextBox2.TabIndex = 9
+        txtId.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtId.Location = New Point(101, 78)
+        txtId.Name = "txtId"
+        txtId.Size = New Size(109, 31)
+        txtId.TabIndex = 9
         ' 
         ' btnModificar
         ' 
@@ -385,7 +385,7 @@ Partial Class SiniestrosForm
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
-        CType(DataGridViewSelectionMode, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvHistorial, ComponentModel.ISupportInitialize).EndInit()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         ResumeLayout(False)
@@ -397,12 +397,12 @@ Partial Class SiniestrosForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbRut As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnVerTodo As Button
     Friend WithEvents btnBuscar As Button
     Friend WithEvents cbEstado As ComboBox
-    Friend WithEvents DataGridViewSelectionMode As DataGridView
+    Friend WithEvents dgvHistorial As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label7 As Label
@@ -414,13 +414,13 @@ Partial Class SiniestrosForm
     Friend WithEvents Label8 As Label
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtId As TextBox
+    Friend WithEvents txtDetalle As TextBox
+    Friend WithEvents txtSeguro As TextBox
+    Friend WithEvents txtCliente As TextBox
+    Friend WithEvents txtCompañia As TextBox
+    Friend WithEvents txtEstado As TextBox
+    Friend WithEvents txtFecha As TextBox
     Friend WithEvents chbIngresar As CheckBox
     Friend WithEvents chbModificar As CheckBox
 End Class
