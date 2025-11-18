@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class SiniestrosForm
-
+    Public Property CallerForm As Form
     Public Sub New()
         InitializeComponent()
         Me.Text = "Gestión de Siniestros"
@@ -143,8 +143,16 @@ Public Class SiniestrosForm
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Dim adminMenu As New AdminForm()
-        adminMenu.Show()
+
+        If CallerForm IsNot Nothing Then
+            ' Volver a la ventana que llamó
+            CallerForm.Show()
+        Else
+            ' Comportamiento normal: volver al Admin
+            Dim adminMenu As New AdminForm()
+            adminMenu.Show()
+        End If
+
         Me.Close()
     End Sub
 

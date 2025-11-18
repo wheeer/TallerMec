@@ -85,23 +85,94 @@ Public Class Ventas
     End Function
     ' Botón vender repuesto
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
+
         ' Validar campos obligatorios
         If tbNombre.Text.Trim() = "" Or tbPrecio.Text.Trim() = "" Or
-           tbCantidad.Text.Trim() = "" Or tbRut.Text.Trim() = "" Then
+       tbCantidad.Text.Trim() = "" Or tbRut.Text.Trim() = "" Then
 
             MessageBox.Show("Complete todos los campos antes de vender.")
             Exit Sub
         End If
 
-        ' Validar cantidad y stock
+        ' Validar stock
         If Not HayStock() Then Exit Sub
+
+        ' --- VALIDAR CLIENTE EN BD ---
+        Dim clienteExiste As Boolean = False
 
         Try
             Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
+                Dim q As String = "SELECT COUNT(*) FROM clientes WHERE Rut = @rut"
+                Using cmd As New MySqlCommand(q, conn)
+                    cmd.Parameters.AddWithValue("@rut", tbRut.Text.Trim())
+                    clienteExiste = (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error validando cliente: " & ex.Message)
+            Exit Sub
+        End Try
+
+        ' --- SI NO EXISTE → preguntar registrar ---
+        If Not clienteExiste Then
+
+            Dim resp = MessageBox.Show("El cliente con RUT " & tbRut.Text &
+                           " no está registrado." & vbCrLf &
+                           "¿Desea registrarlo ahora?",
+                           "Cliente no encontrado",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Question)
+
+            If resp = DialogResult.Yes Then
+
+                Dim fCliente As New ClientesForm()
+
+                ' Indicar quién llamó al formulario (para volver correctamente)
+                fCliente.CallerForm = Me
+
+                ' Pasar automáticamente el RUT si el form tiene ese TextBox
+                If fCliente.Controls.ContainsKey("tbRut") Then
+                    fCliente.Controls("tbRut").Text = tbRut.Text.Trim()
+                End If
+
+                ' Abrir ClientesForm en modo modal (CALL)
+                fCliente.ShowDialog(Me)
+
+                ' Después de cerrar ClientesForm, revalidar cliente
+                Try
+                    Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
+                        Dim q2 As String = "SELECT COUNT(*) FROM clientes WHERE Rut = @rut"
+                        Using cmd2 As New MySqlCommand(q2, conn)
+                            cmd2.Parameters.AddWithValue("@rut", tbRut.Text.Trim())
+                            clienteExiste = Convert.ToInt32(cmd2.ExecuteScalar()) > 0
+                        End Using
+                    End Using
+                Catch ex As Exception
+                    MessageBox.Show("Error validando cliente luego del registro: " & ex.Message)
+                    Exit Sub
+                End Try
+
+                If Not clienteExiste Then
+                    MessageBox.Show("El cliente no fue registrado. Venta cancelada.")
+                    Exit Sub
+                End If
+
+            End If
+
+            Exit Sub ' detener venta hasta registrar cliente
+        End If
+
+
+        ' --- SI EL CLIENTE EXISTE, realizar venta normal ---
+        Try
+            Using conn As MySqlConnection = ConexionBD.ObtenerConexion()
+
                 Dim trans = conn.BeginTransaction()
+
                 Try
                     ' INSERTAR LA VENTA
-                    Dim insertVenta As String = "INSERT INTO ventasrepuestos (NombreRepuesto, CantidadVendida, Cliente, FechaVenta, Total)
+                    Dim insertVenta As String =
+                    "INSERT INTO ventasrepuestos (NombreRepuesto, CantidadVendida, Cliente, FechaVenta, Total)
                      VALUES (@nom, @cant, @cli, @fecha, @total)"
 
                     Using cmd As New MySqlCommand(insertVenta, conn, trans)
@@ -113,8 +184,9 @@ Public Class Ventas
                         cmd.ExecuteNonQuery()
                     End Using
 
-                    ' DESCONTAR STOCK 
-                    Dim updateStock As String = "UPDATE repuestos SET CantidadStock = CantidadStock - @cant WHERE NombreRepuesto = @nom"
+                    ' ACTUALIZAR STOCK
+                    Dim updateStock As String =
+                    "UPDATE repuestos SET CantidadStock = CantidadStock - @cant WHERE NombreRepuesto = @nom"
 
                     Using cmd2 As New MySqlCommand(updateStock, conn, trans)
                         cmd2.Parameters.AddWithValue("@cant", Integer.Parse(tbCantidad.Text))
@@ -122,24 +194,25 @@ Public Class Ventas
                         cmd2.ExecuteNonQuery()
                     End Using
 
-                    ' Confirmar transacción
                     trans.Commit()
                     MessageBox.Show("Venta registrada exitosamente.")
-                    ' Limpiar campos
+
                     LimpiarCampos()
-                    ' Actualizar listado
                     btnVerTodo_Click(Nothing, Nothing)
 
                 Catch ex As Exception
                     trans.Rollback()
                     MessageBox.Show("Error en la venta: " & ex.Message)
                 End Try
+
             End Using
 
         Catch ex As Exception
             MessageBox.Show("Error general: " & ex.Message)
         End Try
+
     End Sub
+
     Private Sub LimpiarCampos()
         tbId.Clear()
         tbRut.Clear()

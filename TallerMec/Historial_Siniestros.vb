@@ -6,7 +6,7 @@ Public Class Historial_Siniestros
     Public Sub New()
         InitializeComponent()
         ' Configuración de ventana
-        Me.Text = "Gestión de Siniestros"
+        Me.Text = "Historial de Siniestros"
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
