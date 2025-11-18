@@ -41,7 +41,6 @@ Partial Class SiniestrosForm
         txtSeguro = New TextBox()
         txtCliente = New TextBox()
         txtCompañia = New TextBox()
-        txtEstado = New TextBox()
         txtFecha = New TextBox()
         txtId = New TextBox()
         btnModificar = New Button()
@@ -53,6 +52,7 @@ Partial Class SiniestrosForm
         Label6 = New Label()
         Label5 = New Label()
         Label4 = New Label()
+        cmbEstado = New ComboBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         CType(dgvHistorial, ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +61,7 @@ Partial Class SiniestrosForm
         ' 
         ' btnVolver
         ' 
-        btnVolver.Location = New Point(944, 701)
+        btnVolver.Location = New Point(1121, 695)
         btnVolver.Margin = New Padding(4, 5, 4, 5)
         btnVolver.Name = "btnVolver"
         btnVolver.Size = New Size(187, 38)
@@ -71,7 +71,7 @@ Partial Class SiniestrosForm
         ' 
         ' btnHistorial
         ' 
-        btnHistorial.Location = New Point(12, 699)
+        btnHistorial.Location = New Point(13, 695)
         btnHistorial.Margin = New Padding(4, 5, 4, 5)
         btnHistorial.Name = "btnHistorial"
         btnHistorial.Size = New Size(187, 38)
@@ -84,7 +84,7 @@ Partial Class SiniestrosForm
         PictureBox1.Image = My.Resources.Resources.images_2025_01_02T174228_126
         PictureBox1.Location = New Point(-5, 2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(1150, 752)
+        PictureBox1.Size = New Size(1334, 779)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 5
         PictureBox1.TabStop = False
@@ -99,7 +99,7 @@ Partial Class SiniestrosForm
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        GroupBox1.Location = New Point(114, 43)
+        GroupBox1.Location = New Point(171, 41)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(913, 257)
         GroupBox1.TabIndex = 6
@@ -177,7 +177,7 @@ Partial Class SiniestrosForm
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 10F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(492, 9)
+        Label3.Location = New Point(506, 9)
         Label3.Name = "Label3"
         Label3.Size = New Size(208, 28)
         Label3.TabIndex = 7
@@ -185,13 +185,13 @@ Partial Class SiniestrosForm
         ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(cmbEstado)
         GroupBox2.Controls.Add(chbModificar)
         GroupBox2.Controls.Add(chbIngresar)
         GroupBox2.Controls.Add(txtDetalle)
         GroupBox2.Controls.Add(txtSeguro)
         GroupBox2.Controls.Add(txtCliente)
         GroupBox2.Controls.Add(txtCompañia)
-        GroupBox2.Controls.Add(txtEstado)
         GroupBox2.Controls.Add(txtFecha)
         GroupBox2.Controls.Add(txtId)
         GroupBox2.Controls.Add(btnModificar)
@@ -204,7 +204,7 @@ Partial Class SiniestrosForm
         GroupBox2.Controls.Add(Label5)
         GroupBox2.Controls.Add(Label4)
         GroupBox2.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        GroupBox2.Location = New Point(319, 303)
+        GroupBox2.Location = New Point(371, 302)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(509, 436)
         GroupBox2.TabIndex = 8
@@ -262,14 +262,6 @@ Partial Class SiniestrosForm
         txtCompañia.Name = "txtCompañia"
         txtCompañia.Size = New Size(286, 31)
         txtCompañia.TabIndex = 12
-        ' 
-        ' txtEstado
-        ' 
-        txtEstado.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtEstado.Location = New Point(101, 178)
-        txtEstado.Name = "txtEstado"
-        txtEstado.Size = New Size(286, 31)
-        txtEstado.TabIndex = 11
         ' 
         ' txtFecha
         ' 
@@ -368,11 +360,19 @@ Partial Class SiniestrosForm
         Label4.TabIndex = 0
         Label4.Text = "ID:"
         ' 
+        ' cmbEstado
+        ' 
+        cmbEstado.FormattingEnabled = True
+        cmbEstado.Location = New Point(101, 177)
+        cmbEstado.Name = "cmbEstado"
+        cmbEstado.Size = New Size(182, 33)
+        cmbEstado.TabIndex = 18
+        ' 
         ' SiniestrosForm
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1143, 750)
+        ClientSize = New Size(1321, 742)
         Controls.Add(GroupBox2)
         Controls.Add(Label3)
         Controls.Add(GroupBox1)
@@ -419,8 +419,8 @@ Partial Class SiniestrosForm
     Friend WithEvents txtSeguro As TextBox
     Friend WithEvents txtCliente As TextBox
     Friend WithEvents txtCompañia As TextBox
-    Friend WithEvents txtEstado As TextBox
     Friend WithEvents txtFecha As TextBox
     Friend WithEvents chbIngresar As CheckBox
     Friend WithEvents chbModificar As CheckBox
+    Friend WithEvents cmbEstado As ComboBox
 End Class

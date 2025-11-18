@@ -266,7 +266,7 @@ Partial Class Ventas
         ' 
         ' tbId
         ' 
-        tbId.Location = New Point(246, 95)
+        tbId.Location = New Point(245, 105)
         tbId.Margin = New Padding(4, 5, 4, 5)
         tbId.Name = "tbId"
         tbId.Size = New Size(224, 31)
@@ -309,7 +309,7 @@ Partial Class Ventas
         PictureBox1.Location = New Point(0, 0)
         PictureBox1.Margin = New Padding(4, 5, 4, 5)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(1143, 850)
+        PictureBox1.Size = New Size(1203, 845)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 26
         PictureBox1.TabStop = False
@@ -318,7 +318,7 @@ Partial Class Ventas
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1143, 850)
+        ClientSize = New Size(1203, 845)
         Controls.Add(GroupBox1)
         Controls.Add(btnHistorial)
         Controls.Add(btnVerTodo)
