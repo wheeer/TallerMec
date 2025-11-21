@@ -206,15 +206,15 @@ Public Class SiniestrosForm
         cmbEstadoSeguro.SelectedIndex = 0
     End Sub
 
-    ' ===========================================================
-    ' ======================== INSERTAR =========================
-    ' ===========================================================
+    ' 
+    '  INSERTAR 
+    ' 
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        '============================
+        '
         ' 1. VALIDAR EXISTENCIA CLIENTE
-        '============================
+        '
         Dim clienteExiste As Boolean = False
 
         Try
@@ -278,9 +278,9 @@ Public Class SiniestrosForm
 
         End If
 
-        '============================
+        '
         ' 2. INSERTAR SINIESTRO
-        '============================
+        '
         Try
             Using conn As MySqlConnection = ObtenerConexion()
 
@@ -312,10 +312,9 @@ Public Class SiniestrosForm
         End Try
     End Sub
 
-    ' ===========================================================
-    ' ============ CARGAR DATOS AL INGRESAR ID ==================
-    ' ===========================================================
-
+    ' 
+    ' CARGAR DATOS AL INGRESAR ID 
+    ' 
     Private Sub txtId_LostFocus(sender As Object, e As EventArgs) Handles txtId.LostFocus
         If Not chbModificar.Checked Then Exit Sub
         If txtId.Text.Trim() = "" Then Exit Sub
@@ -342,9 +341,9 @@ Public Class SiniestrosForm
         End Try
     End Sub
 
-    ' ===========================================================
-    ' ========================= UPDATE ==========================
-    ' ===========================================================
+    ' 
+    '  UPDATE 
+    ' 
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         If txtId.Text.Trim() = "" Then
