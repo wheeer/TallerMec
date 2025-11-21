@@ -21,9 +21,9 @@ Public Class SiniestrosForm
         dgvHistorial.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
-    ' ===========================================================
-    ' ========== CARGA DE COMBOS ================================
-    ' ===========================================================
+    ' 
+    '  CARGA DE COMBOS 
+    ' 
 
     Private Sub CargarEstadosFiltro()
         Try
@@ -82,9 +82,9 @@ Public Class SiniestrosForm
         End Try
     End Sub
 
-    ' ===========================================================
-    ' ========== CARGAR HISTORIAL ===============================
-    ' ===========================================================
+    ' 
+    ' CARGAR HISTORIAL 
+    ' 
 
     Private Sub CargarHistorial(Optional rut As String = "", Optional estado As String = "")
         Try
@@ -126,9 +126,9 @@ Public Class SiniestrosForm
         End Try
     End Sub
 
-    ' ===========================================================
-    ' ================= BOTONES SUPERIORES ======================
-    ' ===========================================================
+    ' 
+    ' BOTONES SUPERIORES 
+    ' 
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         CargarHistorial(tbRut.Text.Trim(), cbEstado.Text)
@@ -152,9 +152,9 @@ Public Class SiniestrosForm
         Me.Close()
     End Sub
 
-    ' ===========================================================
-    ' ===================== MODO INGRESAR =======================
-    ' ===========================================================
+    ' 
+    '  MODO INGRESAR 
+    ' 
 
     Private Sub chbIngresar_CheckedChanged(sender As Object, e As EventArgs) Handles chbIngresar.CheckedChanged
         If chbIngresar.Checked Then
@@ -174,9 +174,9 @@ Public Class SiniestrosForm
         End If
     End Sub
 
-    ' ===========================================================
-    ' ===================== MODO MODIFICAR ======================
-    ' ===========================================================
+    ' 
+    ' MODO MODIFICAR 
+    '
 
     Private Sub chbModificar_CheckedChanged(sender As Object, e As EventArgs) Handles chbModificar.CheckedChanged
         If chbModificar.Checked Then
