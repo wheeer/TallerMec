@@ -43,7 +43,7 @@ Partial Class ClientesForm
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(0, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(800, 450)
+        PictureBox1.Size = New Size(654, 450)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 2
         PictureBox1.TabStop = False
@@ -52,7 +52,7 @@ Partial Class ClientesForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(654, 450)
         Controls.Add(btnVolver)
         Controls.Add(PictureBox1)
         Name = "ClientesForm"
