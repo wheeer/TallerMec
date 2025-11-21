@@ -71,11 +71,9 @@ Partial Class Ventas
         GroupBox1.Controls.Add(tbRut)
         GroupBox1.Controls.Add(tbCantidad)
         GroupBox1.Controls.Add(tbPrecio)
-        GroupBox1.Location = New Point(290, 383)
-        GroupBox1.Margin = New Padding(4, 5, 4, 5)
+        GroupBox1.Location = New Point(203, 230)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(4, 5, 4, 5)
-        GroupBox1.Size = New Size(583, 438)
+        GroupBox1.Size = New Size(408, 263)
         GroupBox1.TabIndex = 27
         GroupBox1.TabStop = False
         GroupBox1.Text = "Ventas"
@@ -84,10 +82,9 @@ Partial Class Ventas
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(21, 330)
-        Label7.Margin = New Padding(4, 0, 4, 0)
+        Label7.Location = New Point(15, 198)
         Label7.Name = "Label7"
-        Label7.Size = New Size(67, 25)
+        Label7.Size = New Size(44, 15)
         Label7.TabIndex = 30
         Label7.Text = "Fecha :"
         ' 
@@ -95,10 +92,9 @@ Partial Class Ventas
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(21, 380)
-        Label8.Margin = New Padding(4, 0, 4, 0)
+        Label8.Location = New Point(15, 228)
         Label8.Name = "Label8"
-        Label8.Size = New Size(130, 25)
+        Label8.Size = New Size(87, 15)
         Label8.TabIndex = 29
         Label8.Text = "Total a Pagar :"
         ' 
@@ -106,10 +102,9 @@ Partial Class Ventas
         ' 
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label10.Location = New Point(21, 273)
-        Label10.Margin = New Padding(4, 0, 4, 0)
+        Label10.Location = New Point(15, 164)
         Label10.Name = "Label10"
-        Label10.Size = New Size(108, 25)
+        Label10.Size = New Size(71, 15)
         Label10.TabIndex = 27
         Label10.Text = "Rut Cliente :"
         ' 
@@ -117,46 +112,41 @@ Partial Class Ventas
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(21, 210)
-        Label6.Margin = New Padding(4, 0, 4, 0)
+        Label6.Location = New Point(15, 126)
         Label6.Name = "Label6"
-        Label6.Size = New Size(84, 25)
+        Label6.Size = New Size(57, 15)
         Label6.TabIndex = 26
         Label6.Text = "Cantidad"
         ' 
         ' tbNombre
         ' 
-        tbNombre.Location = New Point(160, 83)
-        tbNombre.Margin = New Padding(4, 5, 4, 5)
+        tbNombre.Location = New Point(112, 50)
         tbNombre.Name = "tbNombre"
-        tbNombre.Size = New Size(224, 31)
+        tbNombre.Size = New Size(158, 23)
         tbNombre.TabIndex = 18
         ' 
         ' dtFechaCompra
         ' 
-        dtFechaCompra.Location = New Point(160, 320)
-        dtFechaCompra.Margin = New Padding(4, 5, 4, 5)
+        dtFechaCompra.Location = New Point(112, 192)
         dtFechaCompra.Name = "dtFechaCompra"
-        dtFechaCompra.Size = New Size(301, 31)
+        dtFechaCompra.Size = New Size(212, 23)
         dtFechaCompra.TabIndex = 25
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(201, 32)
-        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Location = New Point(141, 19)
         Label3.Name = "Label3"
-        Label3.Size = New Size(210, 25)
+        Label3.Size = New Size(139, 15)
         Label3.TabIndex = 11
         Label3.Text = "Ingrese datos Solicitados"
         ' 
         ' btnVender
         ' 
-        btnVender.Location = New Point(400, 375)
-        btnVender.Margin = New Padding(4, 5, 4, 5)
+        btnVender.Location = New Point(280, 225)
         btnVender.Name = "btnVender"
-        btnVender.Size = New Size(169, 38)
+        btnVender.Size = New Size(118, 23)
         btnVender.TabIndex = 24
         btnVender.Text = "Vender"
         btnVender.UseVisualStyleBackColor = True
@@ -165,10 +155,9 @@ Partial Class Ventas
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(19, 88)
-        Label4.Margin = New Padding(4, 0, 4, 0)
+        Label4.Location = New Point(13, 53)
         Label4.Name = "Label4"
-        Label4.Size = New Size(87, 25)
+        Label4.Size = New Size(58, 15)
         Label4.TabIndex = 12
         Label4.Text = "Nombre :"
         ' 
@@ -176,51 +165,45 @@ Partial Class Ventas
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(19, 147)
-        Label5.Margin = New Padding(4, 0, 4, 0)
+        Label5.Location = New Point(13, 88)
         Label5.Name = "Label5"
-        Label5.Size = New Size(71, 25)
+        Label5.Size = New Size(46, 15)
         Label5.TabIndex = 13
         Label5.Text = "Precio :"
         ' 
         ' tbTotal
         ' 
-        tbTotal.Location = New Point(160, 375)
-        tbTotal.Margin = New Padding(4, 5, 4, 5)
+        tbTotal.Location = New Point(112, 225)
         tbTotal.Name = "tbTotal"
-        tbTotal.Size = New Size(224, 31)
+        tbTotal.Size = New Size(158, 23)
         tbTotal.TabIndex = 22
         ' 
         ' tbRut
         ' 
-        tbRut.Location = New Point(160, 268)
-        tbRut.Margin = New Padding(4, 5, 4, 5)
+        tbRut.Location = New Point(112, 161)
         tbRut.Name = "tbRut"
-        tbRut.Size = New Size(224, 31)
+        tbRut.Size = New Size(158, 23)
         tbRut.TabIndex = 21
         ' 
         ' tbCantidad
         ' 
-        tbCantidad.Location = New Point(160, 205)
-        tbCantidad.Margin = New Padding(4, 5, 4, 5)
+        tbCantidad.Location = New Point(112, 123)
         tbCantidad.Name = "tbCantidad"
-        tbCantidad.Size = New Size(224, 31)
+        tbCantidad.Size = New Size(158, 23)
         tbCantidad.TabIndex = 20
         ' 
         ' tbPrecio
         ' 
-        tbPrecio.Location = New Point(160, 142)
-        tbPrecio.Margin = New Padding(4, 5, 4, 5)
+        tbPrecio.Location = New Point(112, 85)
         tbPrecio.Name = "tbPrecio"
-        tbPrecio.Size = New Size(224, 31)
+        tbPrecio.Size = New Size(158, 23)
         tbPrecio.TabIndex = 19
         ' 
         ' btnVolver
         ' 
-        btnVolver.Location = New Point(939, 765)
-        btnVolver.Margin = New Padding(4, 5, 4, 5)
+        btnVolver.Location = New Point(657, 459)
         btnVolver.Name = "btnVolver"
-        btnVolver.Size = New Size(187, 38)
+        btnVolver.Size = New Size(131, 23)
         btnVolver.TabIndex = 3
         btnVolver.Text = "Volver al Menú"
         btnVolver.UseVisualStyleBackColor = True
@@ -229,11 +212,10 @@ Partial Class Ventas
         ' 
         DataGridView1.BackgroundColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(246, 152)
-        DataGridView1.Margin = New Padding(4, 5, 4, 5)
+        DataGridView1.Location = New Point(172, 91)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 62
-        DataGridView1.Size = New Size(666, 222)
+        DataGridView1.Size = New Size(466, 133)
         DataGridView1.TabIndex = 5
         ' 
         ' MySqlCommand1
@@ -247,57 +229,51 @@ Partial Class Ventas
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(290, 32)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(203, 19)
         Label1.Name = "Label1"
-        Label1.Size = New Size(573, 40)
+        Label1.Size = New Size(384, 25)
         Label1.TabIndex = 6
         Label1.Text = "Busqueda y eleccion de producto solicitado"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(89, 108)
-        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Location = New Point(62, 65)
         Label2.Name = "Label2"
-        Label2.Size = New Size(145, 25)
+        Label2.Size = New Size(96, 15)
         Label2.TabIndex = 7
         Label2.Text = "id / Descripción :"
         ' 
         ' tbId
         ' 
-        tbId.Location = New Point(245, 105)
-        tbId.Margin = New Padding(4, 5, 4, 5)
+        tbId.Location = New Point(172, 63)
         tbId.Name = "tbId"
-        tbId.Size = New Size(224, 31)
+        tbId.Size = New Size(158, 23)
         tbId.TabIndex = 8
         ' 
         ' btnBuscar
         ' 
-        btnBuscar.Location = New Point(503, 95)
-        btnBuscar.Margin = New Padding(4, 5, 4, 5)
+        btnBuscar.Location = New Point(352, 57)
         btnBuscar.Name = "btnBuscar"
-        btnBuscar.Size = New Size(187, 38)
+        btnBuscar.Size = New Size(131, 23)
         btnBuscar.TabIndex = 9
         btnBuscar.Text = "Buscar🔎"
         btnBuscar.UseVisualStyleBackColor = True
         ' 
         ' btnVerTodo
         ' 
-        btnVerTodo.Location = New Point(724, 95)
-        btnVerTodo.Margin = New Padding(4, 5, 4, 5)
+        btnVerTodo.Location = New Point(507, 57)
         btnVerTodo.Name = "btnVerTodo"
-        btnVerTodo.Size = New Size(187, 38)
+        btnVerTodo.Size = New Size(131, 23)
         btnVerTodo.TabIndex = 10
         btnVerTodo.Text = "Ver Todo🔎"
         btnVerTodo.UseVisualStyleBackColor = True
         ' 
         ' btnHistorial
         ' 
-        btnHistorial.Location = New Point(939, 678)
-        btnHistorial.Margin = New Padding(4, 5, 4, 5)
+        btnHistorial.Location = New Point(657, 407)
         btnHistorial.Name = "btnHistorial"
-        btnHistorial.Size = New Size(187, 38)
+        btnHistorial.Size = New Size(131, 23)
         btnHistorial.TabIndex = 23
         btnHistorial.Text = "Historial Ventas"
         btnHistorial.UseVisualStyleBackColor = True
@@ -307,18 +283,17 @@ Partial Class Ventas
         PictureBox1.Dock = DockStyle.Fill
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(0, 0)
-        PictureBox1.Margin = New Padding(4, 5, 4, 5)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(1203, 845)
+        PictureBox1.Size = New Size(842, 502)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 26
         PictureBox1.TabStop = False
         ' 
         ' Ventas
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1203, 845)
+        ClientSize = New Size(842, 502)
         Controls.Add(GroupBox1)
         Controls.Add(btnHistorial)
         Controls.Add(btnVerTodo)
@@ -329,7 +304,6 @@ Partial Class Ventas
         Controls.Add(DataGridView1)
         Controls.Add(btnVolver)
         Controls.Add(PictureBox1)
-        Margin = New Padding(4, 5, 4, 5)
         Name = "Ventas"
         Text = "Ventas"
         GroupBox1.ResumeLayout(False)

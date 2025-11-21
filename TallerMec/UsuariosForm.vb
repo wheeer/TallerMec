@@ -175,6 +175,7 @@ Public Class UsuariosForm
         cbRol.SelectedIndex = -1
     End Sub
 
+    Private Sub tbRut_TextChanged(sender As Object, e As EventArgs) Handles tbRut.TextChanged
 
-
+    End Sub
 End Class
